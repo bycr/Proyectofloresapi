@@ -1,0 +1,65 @@
+﻿@model Proyectoflores.Models.ViewModelsFinca.FincaViewModel
+@{
+    ViewBag.Title = "Crear nueva finca";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center">@ViewBag.Title</h2>
+
+@*NuevaFinca nombre metodo *@
+@*Finca nombre del controlador *@
+
+
+@using (Html.BeginForm("NuevaFinca", "Finca", FormMethod.Post))
+{
+
+    <div class="container">
+        <div class="form-group">
+
+            <div class="col-md-12">
+                <div class="col-md-4">
+                    @Html.LabelFor(d => d.Nombrefinca)
+                    @Html.TextBoxFor(d => d.Nombrefinca, new { onkeydown = "return checkespacio(event);", onkeyup = "this.value = this.value.toUpperCase();", @class = "form-control" })
+                    @Html.ValidationMessageFor(d => d.Nombrefinca)
+
+                </div>
+                @if (ViewBag.departamentosList != null)
+                {
+                    <div class="col-md-4">
+                        @Html.LabelFor(d => d.Iddepartamento)
+                        @Html.DropDownListFor(m => m.Iddepartamento, ViewBag.departamentosList as SelectList, Recursos.Recurso.Finca_desplegable_departamento, new { @class = "form-control" })
+                    </div>
+                }
+                <div class="col-md-4">
+                    @Html.LabelFor(d => d.Idmunicipio)
+                    @Html.DropDownListFor(m => m.Idmunicipio, new SelectList(""), Recursos.Recurso.Finca_desplegable_municipio, new { @class = "form-control" })
+                </div>
+                <br />
+            </div>
+            <br />
+        </div>
+    </div>
+
+    <div style="text-align:right">
+        <input value="@Recursos.Recurso.boton_guardar" class="btn btn-primary" type="submit" />
+    </div>
+
+}
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script>
+
+    $(document).ready(function () {
+        $("#Iddepartamento").change(function () {
+            $.get("/Finca/GetMunicipioList", { iddepartamento: $("#Iddepartamento").val() }, function (data) {
+
+                $("#Idmunicipio").empty();
+                $.each(data, function (Finca, row) {
+                    $("#Idmunicipio").append("<option value='" + row.idmunicipio + "'>" + row.nombre + "</option>")
+                        
+                });
+            });
+        })
+    });
+
+</script>

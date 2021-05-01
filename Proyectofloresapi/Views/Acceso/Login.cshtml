@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="../Css/EstilosLogin.css" type="text/css" />
+</head>
+
+<body class="body">
+
+    <div class="login-caja">
+      
+            <img class="avatar" src="~/Img/logosfondo.png" />
+       
+        <div class="danger">
+            @ViewBag.Error
+        </div>
+        <form action="@Url.Content("~/Acceso/Login")" method="post">
+            <div class="form-group">
+                <b><label>@Recursos.Recurso.Login_usuario</label></b>
+                <input type="number" name="User" class="form-control" />
+            </div>
+            <div class="form-group">
+                <b><label>@Recursos.Recurso.Login_contraseña</label></b>
+                <input type="password" name="Pass" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="@Recursos.Recurso.Login_boton_acceso" class="btn btn-success" />
+            </div>
+        </form>
+
+    </div>
+
+</body>
+
+</html>
+
+

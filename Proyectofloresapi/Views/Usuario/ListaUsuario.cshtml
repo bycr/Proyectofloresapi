@@ -1,0 +1,43 @@
+﻿@model List<Proyectoflores.Models.ViewModelUsuario.ListUsuarioViewModel>
+@{
+    ViewBag.Title = "Lista de Usuarios";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="row" style="text-align: right; padding:5px;">
+    <a href="~/Usuario/NuevoUsuario" class="btn btn-primary">@Recursos.Recurso.boton_nuevo</a>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <tr>
+                <th>@Recursos.Recurso.Usuario_cedula</th>
+                <th>@Recursos.Recurso.Usuario_nombres</th>
+                <th>@Recursos.Recurso.Usuario_apellidos</th>
+                <th>@Recursos.Recurso.Usuario_rol</th>
+                <th>@Recursos.Recurso.Finca_Lista_nombre</th>
+                <th>@Recursos.Recurso.Usuario_correo</th>
+                <th></th>
+            </tr>
+            @foreach (var oElemento in Model)
+            {
+                <tr>
+                    <td>@oElemento.Cedula</td>
+                    <td>@oElemento.Nombres</td>
+                    <td>@oElemento.Apellidos</td>
+                    <td>@oElemento.Idrol</td>
+                    <td>@oElemento.Idfinca</td>
+                    <td>@oElemento.Email</td>
+                    <td>
+                        <a class="btn btn-primary" href="~/Usuario/EditarUsuario/@oElemento.Cedula">@Recursos.Recurso.boton_editar</a>
+                        <a class="btn btn-danger" href="~/Usuario/EliminarUsuario/@oElemento.Cedula">@Recursos.Recurso.boton_eliminar</a>
+                    </td>
+                </tr>
+
+            }
+        </table>
+    </div>
+</div>

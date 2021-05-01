@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8c74333897464a5cadb0479b0cc3a424" Name="Diagram1">
+        <EntityTypeShape EntityType="proyectofloresModel.bloque" Width="1.5" PointX="9.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectofloresModel.departamentos" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectofloresModel.finca" Width="1.5" PointX="5.25" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectofloresModel.invernadero" Width="1.5" PointX="7.5" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectofloresModel.modulo" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectofloresModel.municipios" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectofloresModel.operaciones" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectofloresModel.produccion" Width="1.5" PointX="7.5" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectofloresModel.rol" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectofloresModel.rol_operacion" Width="1.5" PointX="7.5" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyectofloresModel.usuario" Width="1.5" PointX="7.5" PointY="6.125" IsExpanded="true" />
+        <AssociationConnector Association="proyectofloresModel.fk_cedula" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectofloresModel.fk_idfinca" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectofloresModel.fk_idinvernadero" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectofloresModel.fk_iddepartamento" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectofloresModel.fk_iddepartamento2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectofloresModel.fk_idfinca2" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectofloresModel.fk_idfinca3" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectofloresModel.fk_idfinca4" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectofloresModel.fk_idmunicipio" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectofloresModel.fk_idmodulo" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectofloresModel.fk_idoperacion" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectofloresModel.fk_idrol" ManuallyRouted="false" />
+        <AssociationConnector Association="proyectofloresModel.fk_rol" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

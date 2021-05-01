@@ -1,0 +1,37 @@
+﻿@model List<Proyectoflores.Models.ViewModelInvernadero.ListInvernaderoViewModel>
+@{
+    ViewBag.Title = "Lista de Invernaderos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="row" style="text-align: right; padding:5px;">
+    <a href="~/Invernadero/NuevoInvernadero" class="btn btn-primary">@Recursos.Recurso.boton_nuevo</a>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <tr>
+                <th>@Recursos.Recurso.Invernadero_id</th>
+                <th>@Recursos.Recurso.Invernadero_numero</th>
+                <th>@Recursos.Recurso.Invernadero_finca</th>
+                <th></th>
+            </tr>
+            @foreach (var oElemento in Model)
+            {
+                <tr>
+                    <td>@oElemento.Idinvernadero</td>
+                    <td>@oElemento.Numeroinvernadero</td>
+                    <td>@oElemento.Idfinca</td>
+                    <td>
+                        <a class="btn btn-primary" href="~/Invernadero/EditarInvernadero/@oElemento.Idinvernadero">@Recursos.Recurso.boton_editar</a>
+                        <a class="btn btn-danger" href="~/Invernadero/EliminarInvernadero/@oElemento.Idinvernadero">@Recursos.Recurso.boton_eliminar</a>
+                    </td>
+                </tr>
+
+            }
+        </table>
+    </div>
+</div>

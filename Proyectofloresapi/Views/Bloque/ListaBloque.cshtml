@@ -1,0 +1,57 @@
+﻿@model List<Proyectoflores.Models.ViewModelBloque.ListBloqueViewModel>
+@{
+    ViewBag.Title = "ListaBloque";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@* href direcciona al archivo tabla controllers y al metodo nuevo*@
+<div class="row" style="text-align: right; padding:5px;">
+    <a href="~/Bloque/NuevoBloque" class="btn btn-primary">@Recursos.Recurso.boton_nuevo</a>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <tr>
+                <th>ID</th>
+                <th># Bloque</th>
+                <th>ppto año</th>
+                <th>llevamos año</th>
+                <th>diferencia año</th>
+                <th>ppto mes</th>
+                <th>llevamos mes</th>
+                <th>diferencia mes</th>
+                <th>cedula</th>
+                <th>Invernadero</th>
+                <th>Finca</th>
+                <th>Fecha</th>
+                <th></th>
+            </tr>
+            @foreach (var oElemento in Model)
+            {
+                <tr>
+                    <td>@oElemento.Idbloque</td>
+                    <td>@oElemento.Numerobloque</td>
+                    <td>@oElemento.Presupuestadoaño</td>
+                    <td>@oElemento.Llevamosaño</td>
+                    <td>@oElemento.Diferenciaaño</td>
+                    <td>@oElemento.Presupuestadomes</td>
+                    <td>@oElemento.Llevamosmes</td>
+                    <td>@oElemento.Diferenciames</td>
+                    <td>@oElemento.Cedula</td>
+                    <td>@oElemento.Idinvernadero</td>
+                    <td>@oElemento.Idfinca</td>
+                    <td>@oElemento.Fechacreado</td>
+                    <td>
+                        <a class="btn btn-primary" href="~/Bloque/EditarBloque/@oElemento.Idbloque">@Recursos.Recurso.boton_editar</a>
+                        <a class="btn btn-danger" href="~/Bloque/EliminarBloque/@oElemento.Idbloque">@Recursos.Recurso.boton_eliminar</a>
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+
+</div>

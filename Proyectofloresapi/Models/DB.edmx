@@ -1,0 +1,836 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="proyectofloresModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="bloque">
+          <Key>
+            <PropertyRef Name="idbloque" />
+          </Key>
+          <Property Name="idbloque" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="numerobloque" Type="int" Nullable="false" />
+          <Property Name="presupuestadoaño" Type="float" Nullable="false" />
+          <Property Name="llevamosaño" Type="float" Nullable="false" />
+          <Property Name="diferenciaaño" Type="float" Nullable="false" />
+          <Property Name="presupuestadomes" Type="float" Nullable="false" />
+          <Property Name="llevamosmes" Type="float" Nullable="false" />
+          <Property Name="diferenciames" Type="float" Nullable="false" />
+          <Property Name="cedula" Type="int" Nullable="false" />
+          <Property Name="idinvernadero" Type="int" Nullable="false" />
+          <Property Name="idfinca" Type="int" Nullable="false" />
+          <Property Name="fechacreado" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="departamentos">
+          <Key>
+            <PropertyRef Name="iddepartamento" />
+          </Key>
+          <Property Name="iddepartamento" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="codigo" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="finca">
+          <Key>
+            <PropertyRef Name="idfinca" />
+          </Key>
+          <Property Name="idfinca" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombrefinca" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="iddepartamento " Type="int" Nullable="false" />
+          <Property Name="idmunicipio" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="invernadero">
+          <Key>
+            <PropertyRef Name="idinvernadero" />
+          </Key>
+          <Property Name="idinvernadero" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="numeroinvernadero" Type="int" Nullable="false" />
+          <Property Name="idfinca" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="modulo">
+          <Key>
+            <PropertyRef Name="idmodulo" />
+          </Key>
+          <Property Name="idmodulo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="municipios">
+          <Key>
+            <PropertyRef Name="idmunicipio" />
+          </Key>
+          <Property Name="idmunicipio" Type="int" Nullable="false" />
+          <Property Name="iddepartamento" Type="int" Nullable="false" />
+          <Property Name="codigo" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="operaciones">
+          <Key>
+            <PropertyRef Name="idoperacion" />
+          </Key>
+          <Property Name="idoperacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="idmodulo" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="produccion">
+          <Key>
+            <PropertyRef Name="Idfertirriego" />
+          </Key>
+          <Property Name="Idfertirriego" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="valvula" Type="int" Nullable="false" />
+          <Property Name="numerobloque" Type="int" Nullable="false" />
+          <Property Name="numerogoteros" Type="int" Nullable="false" />
+          <Property Name="idfinca" Type="int" Nullable="false" />
+          <Property Name="fechacreado" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="rol">
+          <Key>
+            <PropertyRef Name="idrol" />
+          </Key>
+          <Property Name="idrol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="rol_operacion">
+          <Key>
+            <PropertyRef Name="idrolope" />
+          </Key>
+          <Property Name="idrolope" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idrol" Type="int" Nullable="false" />
+          <Property Name="idoperacion" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="cedula" />
+          </Key>
+          <Property Name="cedula" Type="int" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="nombres" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="apellidos" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="idrol" Type="int" Nullable="false" />
+          <Property Name="idfinca" Type="int" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="token" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="fk_cedula">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+          <End Role="bloque" Type="Self.bloque" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="cedula" />
+            </Principal>
+            <Dependent Role="bloque">
+              <PropertyRef Name="cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_iddepartamento">
+          <End Role="departamentos" Type="Self.departamentos" Multiplicity="1" />
+          <End Role="municipios" Type="Self.municipios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="departamentos">
+              <PropertyRef Name="iddepartamento" />
+            </Principal>
+            <Dependent Role="municipios">
+              <PropertyRef Name="iddepartamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_iddepartamento2">
+          <End Role="departamentos" Type="Self.departamentos" Multiplicity="1" />
+          <End Role="finca" Type="Self.finca" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="departamentos">
+              <PropertyRef Name="iddepartamento" />
+            </Principal>
+            <Dependent Role="finca">
+              <PropertyRef Name="iddepartamento " />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_idfinca">
+          <End Role="finca" Type="Self.finca" Multiplicity="1" />
+          <End Role="bloque" Type="Self.bloque" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="finca">
+              <PropertyRef Name="idfinca" />
+            </Principal>
+            <Dependent Role="bloque">
+              <PropertyRef Name="idfinca" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_idfinca2">
+          <End Role="finca" Type="Self.finca" Multiplicity="1" />
+          <End Role="usuario" Type="Self.usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="finca">
+              <PropertyRef Name="idfinca" />
+            </Principal>
+            <Dependent Role="usuario">
+              <PropertyRef Name="idfinca" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_idfinca3">
+          <End Role="finca" Type="Self.finca" Multiplicity="1" />
+          <End Role="invernadero" Type="Self.invernadero" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="finca">
+              <PropertyRef Name="idfinca" />
+            </Principal>
+            <Dependent Role="invernadero">
+              <PropertyRef Name="idfinca" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_idfinca4">
+          <End Role="finca" Type="Self.finca" Multiplicity="1" />
+          <End Role="produccion" Type="Self.produccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="finca">
+              <PropertyRef Name="idfinca" />
+            </Principal>
+            <Dependent Role="produccion">
+              <PropertyRef Name="idfinca" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_idinvernadero">
+          <End Role="invernadero" Type="Self.invernadero" Multiplicity="1" />
+          <End Role="bloque" Type="Self.bloque" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="invernadero">
+              <PropertyRef Name="idinvernadero" />
+            </Principal>
+            <Dependent Role="bloque">
+              <PropertyRef Name="idinvernadero" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_idmodulo">
+          <End Role="modulo" Type="Self.modulo" Multiplicity="1" />
+          <End Role="operaciones" Type="Self.operaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="modulo">
+              <PropertyRef Name="idmodulo" />
+            </Principal>
+            <Dependent Role="operaciones">
+              <PropertyRef Name="idmodulo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_idmunicipio">
+          <End Role="municipios" Type="Self.municipios" Multiplicity="1" />
+          <End Role="finca" Type="Self.finca" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="municipios">
+              <PropertyRef Name="idmunicipio" />
+            </Principal>
+            <Dependent Role="finca">
+              <PropertyRef Name="idmunicipio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_idoperacion">
+          <End Role="operaciones" Type="Self.operaciones" Multiplicity="1" />
+          <End Role="rol_operacion" Type="Self.rol_operacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="operaciones">
+              <PropertyRef Name="idoperacion" />
+            </Principal>
+            <Dependent Role="rol_operacion">
+              <PropertyRef Name="idoperacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_idrol">
+          <End Role="rol" Type="Self.rol" Multiplicity="1" />
+          <End Role="rol_operacion" Type="Self.rol_operacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="rol">
+              <PropertyRef Name="idrol" />
+            </Principal>
+            <Dependent Role="rol_operacion">
+              <PropertyRef Name="idrol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_rol">
+          <End Role="rol" Type="Self.rol" Multiplicity="1" />
+          <End Role="usuario" Type="Self.usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="rol">
+              <PropertyRef Name="idrol" />
+            </Principal>
+            <Dependent Role="usuario">
+              <PropertyRef Name="idrol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="proyectofloresModelStoreContainer">
+          <EntitySet Name="bloque" EntityType="Self.bloque" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="departamentos" EntityType="Self.departamentos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="finca" EntityType="Self.finca" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="invernadero" EntityType="Self.invernadero" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="modulo" EntityType="Self.modulo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="municipios" EntityType="Self.municipios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="operaciones" EntityType="Self.operaciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="produccion" EntityType="Self.produccion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="rol" EntityType="Self.rol" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="rol_operacion" EntityType="Self.rol_operacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="fk_cedula" Association="Self.fk_cedula">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="bloque" EntitySet="bloque" />
+          </AssociationSet>
+          <AssociationSet Name="fk_iddepartamento" Association="Self.fk_iddepartamento">
+            <End Role="departamentos" EntitySet="departamentos" />
+            <End Role="municipios" EntitySet="municipios" />
+          </AssociationSet>
+          <AssociationSet Name="fk_iddepartamento2" Association="Self.fk_iddepartamento2">
+            <End Role="departamentos" EntitySet="departamentos" />
+            <End Role="finca" EntitySet="finca" />
+          </AssociationSet>
+          <AssociationSet Name="fk_idfinca" Association="Self.fk_idfinca">
+            <End Role="finca" EntitySet="finca" />
+            <End Role="bloque" EntitySet="bloque" />
+          </AssociationSet>
+          <AssociationSet Name="fk_idfinca2" Association="Self.fk_idfinca2">
+            <End Role="finca" EntitySet="finca" />
+            <End Role="usuario" EntitySet="usuario" />
+          </AssociationSet>
+          <AssociationSet Name="fk_idfinca3" Association="Self.fk_idfinca3">
+            <End Role="finca" EntitySet="finca" />
+            <End Role="invernadero" EntitySet="invernadero" />
+          </AssociationSet>
+          <AssociationSet Name="fk_idfinca4" Association="Self.fk_idfinca4">
+            <End Role="finca" EntitySet="finca" />
+            <End Role="produccion" EntitySet="produccion" />
+          </AssociationSet>
+          <AssociationSet Name="fk_idinvernadero" Association="Self.fk_idinvernadero">
+            <End Role="invernadero" EntitySet="invernadero" />
+            <End Role="bloque" EntitySet="bloque" />
+          </AssociationSet>
+          <AssociationSet Name="fk_idmodulo" Association="Self.fk_idmodulo">
+            <End Role="modulo" EntitySet="modulo" />
+            <End Role="operaciones" EntitySet="operaciones" />
+          </AssociationSet>
+          <AssociationSet Name="fk_idmunicipio" Association="Self.fk_idmunicipio">
+            <End Role="municipios" EntitySet="municipios" />
+            <End Role="finca" EntitySet="finca" />
+          </AssociationSet>
+          <AssociationSet Name="fk_idoperacion" Association="Self.fk_idoperacion">
+            <End Role="operaciones" EntitySet="operaciones" />
+            <End Role="rol_operacion" EntitySet="rol_operacion" />
+          </AssociationSet>
+          <AssociationSet Name="fk_idrol" Association="Self.fk_idrol">
+            <End Role="rol" EntitySet="rol" />
+            <End Role="rol_operacion" EntitySet="rol_operacion" />
+          </AssociationSet>
+          <AssociationSet Name="fk_rol" Association="Self.fk_rol">
+            <End Role="rol" EntitySet="rol" />
+            <End Role="usuario" EntitySet="usuario" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="proyectofloresModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="bloque">
+          <Key>
+            <PropertyRef Name="idbloque" />
+          </Key>
+          <Property Name="idbloque" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="numerobloque" Type="Int32" Nullable="false" />
+          <Property Name="presupuestadoaño" Type="Double" Nullable="false" />
+          <Property Name="llevamosaño" Type="Double" Nullable="false" />
+          <Property Name="diferenciaaño" Type="Double" Nullable="false" />
+          <Property Name="presupuestadomes" Type="Double" Nullable="false" />
+          <Property Name="llevamosmes" Type="Double" Nullable="false" />
+          <Property Name="diferenciames" Type="Double" Nullable="false" />
+          <Property Name="cedula" Type="Int32" Nullable="false" />
+          <Property Name="idinvernadero" Type="Int32" Nullable="false" />
+          <Property Name="idfinca" Type="Int32" Nullable="false" />
+          <Property Name="fechacreado" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="usuario" Relationship="Self.fk_cedula" FromRole="bloque" ToRole="usuario" />
+          <NavigationProperty Name="finca" Relationship="Self.fk_idfinca" FromRole="bloque" ToRole="finca" />
+          <NavigationProperty Name="invernadero" Relationship="Self.fk_idinvernadero" FromRole="bloque" ToRole="invernadero" />
+        </EntityType>
+        <EntityType Name="departamentos">
+          <Key>
+            <PropertyRef Name="iddepartamento" />
+          </Key>
+          <Property Name="iddepartamento" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codigo" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="municipios" Relationship="Self.fk_iddepartamento" FromRole="departamentos" ToRole="municipios" />
+          <NavigationProperty Name="finca" Relationship="Self.fk_iddepartamento2" FromRole="departamentos" ToRole="finca" />
+        </EntityType>
+        <EntityType Name="finca">
+          <Key>
+            <PropertyRef Name="idfinca" />
+          </Key>
+          <Property Name="idfinca" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombrefinca" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="iddepartamento_" Type="Int32" Nullable="false" />
+          <Property Name="idmunicipio" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="bloque" Relationship="Self.fk_idfinca" FromRole="finca" ToRole="bloque" />
+          <NavigationProperty Name="departamentos" Relationship="Self.fk_iddepartamento2" FromRole="finca" ToRole="departamentos" />
+          <NavigationProperty Name="usuario" Relationship="Self.fk_idfinca2" FromRole="finca" ToRole="usuario" />
+          <NavigationProperty Name="invernadero" Relationship="Self.fk_idfinca3" FromRole="finca" ToRole="invernadero" />
+          <NavigationProperty Name="produccion" Relationship="Self.fk_idfinca4" FromRole="finca" ToRole="produccion" />
+          <NavigationProperty Name="municipios" Relationship="Self.fk_idmunicipio" FromRole="finca" ToRole="municipios" />
+        </EntityType>
+        <EntityType Name="invernadero">
+          <Key>
+            <PropertyRef Name="idinvernadero" />
+          </Key>
+          <Property Name="idinvernadero" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="numeroinvernadero" Type="Int32" Nullable="false" />
+          <Property Name="idfinca" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="bloque" Relationship="Self.fk_idinvernadero" FromRole="invernadero" ToRole="bloque" />
+          <NavigationProperty Name="finca" Relationship="Self.fk_idfinca3" FromRole="invernadero" ToRole="finca" />
+        </EntityType>
+        <EntityType Name="modulo">
+          <Key>
+            <PropertyRef Name="idmodulo" />
+          </Key>
+          <Property Name="idmodulo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="operaciones" Relationship="Self.fk_idmodulo" FromRole="modulo" ToRole="operaciones" />
+        </EntityType>
+        <EntityType Name="municipios">
+          <Key>
+            <PropertyRef Name="idmunicipio" />
+          </Key>
+          <Property Name="idmunicipio" Type="Int32" Nullable="false" />
+          <Property Name="iddepartamento" Type="Int32" Nullable="false" />
+          <Property Name="codigo" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="departamentos" Relationship="Self.fk_iddepartamento" FromRole="municipios" ToRole="departamentos" />
+          <NavigationProperty Name="finca" Relationship="Self.fk_idmunicipio" FromRole="municipios" ToRole="finca" />
+        </EntityType>
+        <EntityType Name="operaciones">
+          <Key>
+            <PropertyRef Name="idoperacion" />
+          </Key>
+          <Property Name="idoperacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idmodulo" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="modulo" Relationship="Self.fk_idmodulo" FromRole="operaciones" ToRole="modulo" />
+          <NavigationProperty Name="rol_operacion" Relationship="Self.fk_idoperacion" FromRole="operaciones" ToRole="rol_operacion" />
+        </EntityType>
+        <EntityType Name="produccion">
+          <Key>
+            <PropertyRef Name="Idfertirriego" />
+          </Key>
+          <Property Name="Idfertirriego" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="valvula" Type="Int32" Nullable="false" />
+          <Property Name="numerobloque" Type="Int32" Nullable="false" />
+          <Property Name="numerogoteros" Type="Int32" Nullable="false" />
+          <Property Name="idfinca" Type="Int32" Nullable="false" />
+          <Property Name="fechacreado" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="finca" Relationship="Self.fk_idfinca4" FromRole="produccion" ToRole="finca" />
+        </EntityType>
+        <EntityType Name="rol">
+          <Key>
+            <PropertyRef Name="idrol" />
+          </Key>
+          <Property Name="idrol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="rol_operacion" Relationship="Self.fk_idrol" FromRole="rol" ToRole="rol_operacion" />
+          <NavigationProperty Name="usuario" Relationship="Self.fk_rol" FromRole="rol" ToRole="usuario" />
+        </EntityType>
+        <EntityType Name="rol_operacion">
+          <Key>
+            <PropertyRef Name="idrolope" />
+          </Key>
+          <Property Name="idrolope" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idrol" Type="Int32" Nullable="false" />
+          <Property Name="idoperacion" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="operaciones" Relationship="Self.fk_idoperacion" FromRole="rol_operacion" ToRole="operaciones" />
+          <NavigationProperty Name="rol" Relationship="Self.fk_idrol" FromRole="rol_operacion" ToRole="rol" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="cedula" />
+          </Key>
+          <Property Name="cedula" Type="Int32" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idrol" Type="Int32" Nullable="false" />
+          <Property Name="idfinca" Type="Int32" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="token" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="bloque" Relationship="Self.fk_cedula" FromRole="usuario" ToRole="bloque" />
+          <NavigationProperty Name="finca" Relationship="Self.fk_idfinca2" FromRole="usuario" ToRole="finca" />
+          <NavigationProperty Name="rol" Relationship="Self.fk_rol" FromRole="usuario" ToRole="rol" />
+        </EntityType>
+        <Association Name="fk_cedula">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+          <End Role="bloque" Type="Self.bloque" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="cedula" />
+            </Principal>
+            <Dependent Role="bloque">
+              <PropertyRef Name="cedula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_idfinca">
+          <End Role="finca" Type="Self.finca" Multiplicity="1" />
+          <End Role="bloque" Type="Self.bloque" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="finca">
+              <PropertyRef Name="idfinca" />
+            </Principal>
+            <Dependent Role="bloque">
+              <PropertyRef Name="idfinca" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_idinvernadero">
+          <End Role="invernadero" Type="Self.invernadero" Multiplicity="1" />
+          <End Role="bloque" Type="Self.bloque" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="invernadero">
+              <PropertyRef Name="idinvernadero" />
+            </Principal>
+            <Dependent Role="bloque">
+              <PropertyRef Name="idinvernadero" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_iddepartamento">
+          <End Role="departamentos" Type="Self.departamentos" Multiplicity="1" />
+          <End Role="municipios" Type="Self.municipios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="departamentos">
+              <PropertyRef Name="iddepartamento" />
+            </Principal>
+            <Dependent Role="municipios">
+              <PropertyRef Name="iddepartamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_iddepartamento2">
+          <End Role="departamentos" Type="Self.departamentos" Multiplicity="1" />
+          <End Role="finca" Type="Self.finca" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="departamentos">
+              <PropertyRef Name="iddepartamento" />
+            </Principal>
+            <Dependent Role="finca">
+              <PropertyRef Name="iddepartamento_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_idfinca2">
+          <End Role="finca" Type="Self.finca" Multiplicity="1" />
+          <End Role="usuario" Type="Self.usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="finca">
+              <PropertyRef Name="idfinca" />
+            </Principal>
+            <Dependent Role="usuario">
+              <PropertyRef Name="idfinca" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_idfinca3">
+          <End Role="finca" Type="Self.finca" Multiplicity="1" />
+          <End Role="invernadero" Type="Self.invernadero" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="finca">
+              <PropertyRef Name="idfinca" />
+            </Principal>
+            <Dependent Role="invernadero">
+              <PropertyRef Name="idfinca" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_idfinca4">
+          <End Role="finca" Type="Self.finca" Multiplicity="1" />
+          <End Role="produccion" Type="Self.produccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="finca">
+              <PropertyRef Name="idfinca" />
+            </Principal>
+            <Dependent Role="produccion">
+              <PropertyRef Name="idfinca" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_idmunicipio">
+          <End Role="municipios" Type="Self.municipios" Multiplicity="1" />
+          <End Role="finca" Type="Self.finca" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="municipios">
+              <PropertyRef Name="idmunicipio" />
+            </Principal>
+            <Dependent Role="finca">
+              <PropertyRef Name="idmunicipio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_idmodulo">
+          <End Role="modulo" Type="Self.modulo" Multiplicity="1" />
+          <End Role="operaciones" Type="Self.operaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="modulo">
+              <PropertyRef Name="idmodulo" />
+            </Principal>
+            <Dependent Role="operaciones">
+              <PropertyRef Name="idmodulo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_idoperacion">
+          <End Role="operaciones" Type="Self.operaciones" Multiplicity="1" />
+          <End Role="rol_operacion" Type="Self.rol_operacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="operaciones">
+              <PropertyRef Name="idoperacion" />
+            </Principal>
+            <Dependent Role="rol_operacion">
+              <PropertyRef Name="idoperacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_idrol">
+          <End Role="rol" Type="Self.rol" Multiplicity="1" />
+          <End Role="rol_operacion" Type="Self.rol_operacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="rol">
+              <PropertyRef Name="idrol" />
+            </Principal>
+            <Dependent Role="rol_operacion">
+              <PropertyRef Name="idrol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_rol">
+          <End Role="rol" Type="Self.rol" Multiplicity="1" />
+          <End Role="usuario" Type="Self.usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="rol">
+              <PropertyRef Name="idrol" />
+            </Principal>
+            <Dependent Role="usuario">
+              <PropertyRef Name="idrol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="proyectofloresEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="bloque" EntityType="Self.bloque" />
+          <EntitySet Name="departamentos" EntityType="Self.departamentos" />
+          <EntitySet Name="finca" EntityType="Self.finca" />
+          <EntitySet Name="invernadero" EntityType="Self.invernadero" />
+          <EntitySet Name="modulo" EntityType="Self.modulo" />
+          <EntitySet Name="municipios" EntityType="Self.municipios" />
+          <EntitySet Name="operaciones" EntityType="Self.operaciones" />
+          <EntitySet Name="produccion" EntityType="Self.produccion" />
+          <EntitySet Name="rol" EntityType="Self.rol" />
+          <EntitySet Name="rol_operacion" EntityType="Self.rol_operacion" />
+          <EntitySet Name="usuario" EntityType="Self.usuario" />
+          <AssociationSet Name="fk_cedula" Association="Self.fk_cedula">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="bloque" EntitySet="bloque" />
+          </AssociationSet>
+          <AssociationSet Name="fk_idfinca" Association="Self.fk_idfinca">
+            <End Role="finca" EntitySet="finca" />
+            <End Role="bloque" EntitySet="bloque" />
+          </AssociationSet>
+          <AssociationSet Name="fk_idinvernadero" Association="Self.fk_idinvernadero">
+            <End Role="invernadero" EntitySet="invernadero" />
+            <End Role="bloque" EntitySet="bloque" />
+          </AssociationSet>
+          <AssociationSet Name="fk_iddepartamento" Association="Self.fk_iddepartamento">
+            <End Role="departamentos" EntitySet="departamentos" />
+            <End Role="municipios" EntitySet="municipios" />
+          </AssociationSet>
+          <AssociationSet Name="fk_iddepartamento2" Association="Self.fk_iddepartamento2">
+            <End Role="departamentos" EntitySet="departamentos" />
+            <End Role="finca" EntitySet="finca" />
+          </AssociationSet>
+          <AssociationSet Name="fk_idfinca2" Association="Self.fk_idfinca2">
+            <End Role="finca" EntitySet="finca" />
+            <End Role="usuario" EntitySet="usuario" />
+          </AssociationSet>
+          <AssociationSet Name="fk_idfinca3" Association="Self.fk_idfinca3">
+            <End Role="finca" EntitySet="finca" />
+            <End Role="invernadero" EntitySet="invernadero" />
+          </AssociationSet>
+          <AssociationSet Name="fk_idfinca4" Association="Self.fk_idfinca4">
+            <End Role="finca" EntitySet="finca" />
+            <End Role="produccion" EntitySet="produccion" />
+          </AssociationSet>
+          <AssociationSet Name="fk_idmunicipio" Association="Self.fk_idmunicipio">
+            <End Role="municipios" EntitySet="municipios" />
+            <End Role="finca" EntitySet="finca" />
+          </AssociationSet>
+          <AssociationSet Name="fk_idmodulo" Association="Self.fk_idmodulo">
+            <End Role="modulo" EntitySet="modulo" />
+            <End Role="operaciones" EntitySet="operaciones" />
+          </AssociationSet>
+          <AssociationSet Name="fk_idoperacion" Association="Self.fk_idoperacion">
+            <End Role="operaciones" EntitySet="operaciones" />
+            <End Role="rol_operacion" EntitySet="rol_operacion" />
+          </AssociationSet>
+          <AssociationSet Name="fk_idrol" Association="Self.fk_idrol">
+            <End Role="rol" EntitySet="rol" />
+            <End Role="rol_operacion" EntitySet="rol_operacion" />
+          </AssociationSet>
+          <AssociationSet Name="fk_rol" Association="Self.fk_rol">
+            <End Role="rol" EntitySet="rol" />
+            <End Role="usuario" EntitySet="usuario" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="proyectofloresModelStoreContainer" CdmEntityContainer="proyectofloresEntities">
+          <EntitySetMapping Name="bloque">
+            <EntityTypeMapping TypeName="proyectofloresModel.bloque">
+              <MappingFragment StoreEntitySet="bloque">
+                <ScalarProperty Name="idbloque" ColumnName="idbloque" />
+                <ScalarProperty Name="numerobloque" ColumnName="numerobloque" />
+                <ScalarProperty Name="presupuestadoaño" ColumnName="presupuestadoaño" />
+                <ScalarProperty Name="llevamosaño" ColumnName="llevamosaño" />
+                <ScalarProperty Name="diferenciaaño" ColumnName="diferenciaaño" />
+                <ScalarProperty Name="presupuestadomes" ColumnName="presupuestadomes" />
+                <ScalarProperty Name="llevamosmes" ColumnName="llevamosmes" />
+                <ScalarProperty Name="diferenciames" ColumnName="diferenciames" />
+                <ScalarProperty Name="cedula" ColumnName="cedula" />
+                <ScalarProperty Name="idinvernadero" ColumnName="idinvernadero" />
+                <ScalarProperty Name="idfinca" ColumnName="idfinca" />
+                <ScalarProperty Name="fechacreado" ColumnName="fechacreado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="departamentos">
+            <EntityTypeMapping TypeName="proyectofloresModel.departamentos">
+              <MappingFragment StoreEntitySet="departamentos">
+                <ScalarProperty Name="iddepartamento" ColumnName="iddepartamento" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="finca">
+            <EntityTypeMapping TypeName="proyectofloresModel.finca">
+              <MappingFragment StoreEntitySet="finca">
+                <ScalarProperty Name="idfinca" ColumnName="idfinca" />
+                <ScalarProperty Name="nombrefinca" ColumnName="nombrefinca" />
+                <ScalarProperty Name="iddepartamento_" ColumnName="iddepartamento " />
+                <ScalarProperty Name="idmunicipio" ColumnName="idmunicipio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="invernadero">
+            <EntityTypeMapping TypeName="proyectofloresModel.invernadero">
+              <MappingFragment StoreEntitySet="invernadero">
+                <ScalarProperty Name="idinvernadero" ColumnName="idinvernadero" />
+                <ScalarProperty Name="numeroinvernadero" ColumnName="numeroinvernadero" />
+                <ScalarProperty Name="idfinca" ColumnName="idfinca" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="modulo">
+            <EntityTypeMapping TypeName="proyectofloresModel.modulo">
+              <MappingFragment StoreEntitySet="modulo">
+                <ScalarProperty Name="idmodulo" ColumnName="idmodulo" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="municipios">
+            <EntityTypeMapping TypeName="proyectofloresModel.municipios">
+              <MappingFragment StoreEntitySet="municipios">
+                <ScalarProperty Name="idmunicipio" ColumnName="idmunicipio" />
+                <ScalarProperty Name="iddepartamento" ColumnName="iddepartamento" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="operaciones">
+            <EntityTypeMapping TypeName="proyectofloresModel.operaciones">
+              <MappingFragment StoreEntitySet="operaciones">
+                <ScalarProperty Name="idoperacion" ColumnName="idoperacion" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="idmodulo" ColumnName="idmodulo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="produccion">
+            <EntityTypeMapping TypeName="proyectofloresModel.produccion">
+              <MappingFragment StoreEntitySet="produccion">
+                <ScalarProperty Name="Idfertirriego" ColumnName="Idfertirriego" />
+                <ScalarProperty Name="valvula" ColumnName="valvula" />
+                <ScalarProperty Name="numerobloque" ColumnName="numerobloque" />
+                <ScalarProperty Name="numerogoteros" ColumnName="numerogoteros" />
+                <ScalarProperty Name="idfinca" ColumnName="idfinca" />
+                <ScalarProperty Name="fechacreado" ColumnName="fechacreado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="rol">
+            <EntityTypeMapping TypeName="proyectofloresModel.rol">
+              <MappingFragment StoreEntitySet="rol">
+                <ScalarProperty Name="idrol" ColumnName="idrol" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="rol_operacion">
+            <EntityTypeMapping TypeName="proyectofloresModel.rol_operacion">
+              <MappingFragment StoreEntitySet="rol_operacion">
+                <ScalarProperty Name="idrolope" ColumnName="idrolope" />
+                <ScalarProperty Name="idrol" ColumnName="idrol" />
+                <ScalarProperty Name="idoperacion" ColumnName="idoperacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usuario">
+            <EntityTypeMapping TypeName="proyectofloresModel.usuario">
+              <MappingFragment StoreEntitySet="usuario">
+                <ScalarProperty Name="cedula" ColumnName="cedula" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="nombres" ColumnName="nombres" />
+                <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+                <ScalarProperty Name="idrol" ColumnName="idrol" />
+                <ScalarProperty Name="idfinca" ColumnName="idfinca" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="token" ColumnName="token" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
