@@ -1,6 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
+
 namespace Proyectofloresapi
 {
     public class FilterConfig
@@ -8,6 +9,8 @@ namespace Proyectofloresapi
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+            filters.Add(new Proyectoflores.Filters.VerificaSession());
+
         }
     }
 }

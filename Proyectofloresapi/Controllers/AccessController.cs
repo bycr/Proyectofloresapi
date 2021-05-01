@@ -39,6 +39,7 @@ namespace Proyectofloresapi.Controllers
 
             }catch(Exception ex)
             {
+                
                 oR.result = 0;
                 oR.message = "Ocurrio un error";
             }

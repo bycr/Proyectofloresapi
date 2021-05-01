@@ -245,10 +245,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\proyectoflores.mdf" />
-    <Content Include="App_Data\proyectoflores_log.ldf">
-      <DependentUpon>proyectoflores.mdf</DependentUpon>
-    </Content>
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -263,8 +259,8 @@
     <Content Include="Img\logosfondo.png" />
     <Content Include="Models\DB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DB.Context.cs</LastGenOutput>
       <DependentUpon>DB.edmx</DependentUpon>
+      <LastGenOutput>DB.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\DB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -299,6 +295,9 @@
     <Content Include="Models\DB.edmx.diagram">
       <DependentUpon>DB.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\ProyectoFlores - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\ProyectoFlores - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\Proyectofloresapi20210430092644 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -339,6 +338,7 @@
     <Content Include="Views\Finca\EditarFinca.cshtml" />
     <Content Include="Views\Finca\ListaFinca.cshtml" />
     <Content Include="Views\Finca\NuevaFinca.cshtml" />
+    <Content Include="Views\Shared\_LayoutLogin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -372,7 +372,9 @@
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Recursos\Recurso.en-US.resx" />
     <EmbeddedResource Include="Recursos\Recurso.resx">
