@@ -5,7 +5,6 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="26ccf4656bd242a8bd2e86f87926f66c" Name="Diagram1">
-        <EntityTypeShape EntityType="proyectofloresModel.bloque" Width="1.5" PointX="9.75" PointY="8.125" IsExpanded="true" />
         <EntityTypeShape EntityType="proyectofloresModel.departamentos" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="proyectofloresModel.finca" Width="1.5" PointX="5.25" PointY="7.25" IsExpanded="true" />
         <EntityTypeShape EntityType="proyectofloresModel.invernadero" Width="1.5" PointX="7.5" PointY="10.875" IsExpanded="true" />
@@ -16,9 +15,6 @@
         <EntityTypeShape EntityType="proyectofloresModel.rol" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
         <EntityTypeShape EntityType="proyectofloresModel.rol_operacion" Width="1.5" PointX="7.5" PointY="2.75" IsExpanded="true" />
         <EntityTypeShape EntityType="proyectofloresModel.usuario" Width="1.5" PointX="7.5" PointY="6.125" IsExpanded="true" />
-        <AssociationConnector Association="proyectofloresModel.fk_cedula" ManuallyRouted="false" />
-        <AssociationConnector Association="proyectofloresModel.fk_idfinca" ManuallyRouted="false" />
-        <AssociationConnector Association="proyectofloresModel.fk_idinvernadero" ManuallyRouted="false" />
         <AssociationConnector Association="proyectofloresModel.fk_iddepartamento" ManuallyRouted="false" />
         <AssociationConnector Association="proyectofloresModel.fk_iddepartamento2" ManuallyRouted="false" />
         <AssociationConnector Association="proyectofloresModel.fk_idfinca2" ManuallyRouted="false" />
@@ -29,6 +25,10 @@
         <AssociationConnector Association="proyectofloresModel.fk_idoperacion" ManuallyRouted="false" />
         <AssociationConnector Association="proyectofloresModel.fk_idrol" ManuallyRouted="false" />
         <AssociationConnector Association="proyectofloresModel.fk_rol" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="proyectofloresModel.bloque" Width="1.5" PointX="9.75" PointY="7.5" />
+        <AssociationConnector Association="proyectofloresModel.fk_cedula" />
+        <AssociationConnector Association="proyectofloresModel.fk_idfinca" />
+        <AssociationConnector Association="proyectofloresModel.fk_idinvernadero" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

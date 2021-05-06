@@ -17,10 +17,10 @@ namespace Proyectofloresapi.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public finca()
         {
-            this.bloque = new HashSet<bloque>();
             this.usuario = new HashSet<usuario>();
             this.invernadero = new HashSet<invernadero>();
             this.produccion = new HashSet<produccion>();
+            this.bloque = new HashSet<bloque>();
         }
     
         public int idfinca { get; set; }
@@ -28,8 +28,6 @@ namespace Proyectofloresapi.Models
         public int iddepartamento_ { get; set; }
         public int idmunicipio { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<bloque> bloque { get; set; }
         public virtual departamentos departamentos { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<usuario> usuario { get; set; }
@@ -38,5 +36,7 @@ namespace Proyectofloresapi.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<produccion> produccion { get; set; }
         public virtual municipios municipios { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<bloque> bloque { get; set; }
     }
 }

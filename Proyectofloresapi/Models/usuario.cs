@@ -29,9 +29,9 @@ namespace Proyectofloresapi.Models
         public string email { get; set; }
         public string token { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<bloque> bloque { get; set; }
         public virtual finca finca { get; set; }
         public virtual rol rol { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<bloque> bloque { get; set; }
     }
 }

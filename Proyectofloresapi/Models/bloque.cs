@@ -25,7 +25,7 @@ namespace Proyectofloresapi.Models
         public int cedula { get; set; }
         public int idinvernadero { get; set; }
         public int idfinca { get; set; }
-        public System.DateTime fechacreado { get; set; }
+        public byte[] fechacreado { get; set; }
     
         public virtual usuario usuario { get; set; }
         public virtual finca finca { get; set; }

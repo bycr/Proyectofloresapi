@@ -170,6 +170,7 @@
     <Compile Include="Controllers\FincaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InvernaderoController.cs" />
+    <Compile Include="Controllers\ProduccionController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Filters\AuthorizeUser.cs" />
     <Compile Include="Filters\VerificaSession.cs" />
@@ -215,6 +216,7 @@
     <Compile Include="Models\produccion.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\prueba.cs" />
     <Compile Include="Models\rol.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
@@ -339,6 +341,7 @@
     <Content Include="Views\Finca\ListaFinca.cshtml" />
     <Content Include="Views\Finca\NuevaFinca.cshtml" />
     <Content Include="Views\Shared\_LayoutLogin.cshtml" />
+    <Content Include="Views\Produccion\ListaProduccion.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

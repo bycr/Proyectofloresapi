@@ -67,20 +67,18 @@ namespace Proyectoflores.Controllers
 
                     using (proyectofloresEntities db = new proyectofloresEntities())
                     {
-                        var oBloque = new bloque
-                        {
-                            numerobloque = model.Numerobloque,
-                            presupuestadoaño = model.Presupuestadoaño,
-                            llevamosaño = model.Llevamosaño,
-                            diferenciaaño = model.Presupuestadoaño - model.Llevamosaño,
-                            presupuestadomes = model.Presupuestadomes,
-                            llevamosmes = model.Llevamosmes,
-                            diferenciames = model.Presupuestadomes - model.Llevamosmes,
-                            cedula = model.Cedula,
-                            idfinca = model.Idfinca,
-                            idinvernadero = model.Idinvernadero,
+                        var oBloque = new bloque();
 
-                        };
+                        oBloque.numerobloque = model.Numerobloque;
+                        oBloque.presupuestadoaño = model.Presupuestadoaño;
+                        oBloque.llevamosaño = model.Llevamosaño;
+                        oBloque.diferenciaaño = model.Presupuestadoaño - model.Llevamosaño;
+                        oBloque.presupuestadomes = model.Presupuestadomes;
+                        oBloque.llevamosmes = model.Llevamosmes;
+                        oBloque.diferenciames = model.Presupuestadomes - model.Llevamosmes;
+                        oBloque.cedula = model.Cedula;
+                        oBloque.idfinca = model.Idfinca;
+                        oBloque.idinvernadero = model.Idinvernadero;
 
                         db.bloque.Add(oBloque);
                         db.SaveChanges();
