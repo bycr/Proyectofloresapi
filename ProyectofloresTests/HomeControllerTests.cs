@@ -1,18 +1,18 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Proyectofloresapi.Controllers;
 
-namespace ProyectofloresapiTests
+namespace ProyectofloresTests
 {
-    [TestClass()]
+    [TestClass]
     public class HomeControllerTests
     {
         [TestMethod]
         public void vistaindex()
         {
-            string result = HomeController.vistaindex();
+            string result = Proyectofloresapi.Controllers.HomeController.vistaindex();
             Assert.AreEqual("view", result);
 
         }
-        
+       
+       
     }
 }

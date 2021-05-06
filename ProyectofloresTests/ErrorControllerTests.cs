@@ -1,17 +1,17 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Proyectofloresapi.Controllers;
 
-namespace ProyectofloresapiTests
+namespace ProyectofloresTests
 {
-    [TestClass()]
+    [TestClass]
     public class ErrorControllerTests
     {
         [TestMethod]
         public void errorview()
         {
-            string result = ErrorController.errorview();
+            string result = Proyectofloresapi.Controllers.ErrorController.errorview();
             Assert.AreEqual("view", result);
 
         }
+      
     }
 }

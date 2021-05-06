@@ -1,17 +1,17 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Proyectofloresapi.Controllers;
 
-namespace ProyectofloresapiTests
+namespace ProyectofloresTests
 {
-    [TestClass()]
+    [TestClass]
     public class AccesoControllerTests
     {
         [TestMethod]
         public void login()
         {
-            string result = AccesoController.login();
+            string result = Proyectofloresapi.Controllers.AccesoController.login();
             Assert.AreEqual("index", result);
 
         }
+       
     }
 }

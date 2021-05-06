@@ -9,9 +9,8 @@
 
 namespace Proyectofloresapi.Models
 {
-    using System;
     using System.Collections.Generic;
-    
+
     public partial class rol
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
