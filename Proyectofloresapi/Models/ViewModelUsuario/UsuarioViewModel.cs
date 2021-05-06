@@ -1,7 +1,7 @@
 ﻿using Recursos;
 using System.ComponentModel.DataAnnotations;
 
-namespace Proyectoflores.Models.ViewModelUsuario
+namespace Proyectofloresapi.Models.ViewModelUsuario
 {
     public class UsuarioViewModel
     {

@@ -1,13 +1,12 @@
-﻿using Proyectoflores.Filters;
-using Proyectoflores.Models;
-using Proyectoflores.Models.ViewModelsFinca;
+﻿using Proyectofloresapi.Filters;
+using Proyectofloresapi.Models.ViewModelsFinca;
 using Proyectofloresapi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 
-namespace Proyectoflores.Controllers
+namespace Proyectofloresapi.Controllers
 {
     public class FincaController : Controller
     {

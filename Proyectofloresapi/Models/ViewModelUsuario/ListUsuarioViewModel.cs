@@ -1,4 +1,4 @@
-﻿namespace Proyectoflores.Models.ViewModelUsuario
+﻿namespace Proyectofloresapi.Models.ViewModelUsuario
 {
     public class ListUsuarioViewModel
     {

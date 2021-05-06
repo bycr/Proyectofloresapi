@@ -1,7 +1,7 @@
 ﻿using Recursos;
 using System.ComponentModel.DataAnnotations;
 
-namespace Proyectoflores.Models.ViewModelsFinca
+namespace Proyectofloresapi.Models.ViewModelsFinca
 {
     public class FincaViewModel
     {

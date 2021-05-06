@@ -1,11 +1,11 @@
-﻿using Proyectoflores.Models.ViewModelsFinca;
+﻿using Proyectofloresapi.Models.ViewModelsFinca;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
-namespace Proyectoflores.Models.ViewModelInvernadero
+namespace Proyectofloresapi.Models.ViewModelInvernadero
 {
     public class ListInvernaderoViewModel
     {

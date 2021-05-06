@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Proyectoflores.Models;
-using Proyectoflores.Models.ViewModelUsuario;
+using Proyectofloresapi.Models;
+using Proyectofloresapi.Models.ViewModelUsuario;
 using Proyectofloresapi.Models;
 
-namespace Proyectoflores.Controllers
+namespace Proyectofloresapi.Controllers
 {
     public class UsuarioController : Controller
     {

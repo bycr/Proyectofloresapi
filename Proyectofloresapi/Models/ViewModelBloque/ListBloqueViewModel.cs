@@ -1,4 +1,4 @@
-﻿namespace Proyectoflores.Models.ViewModelBloque
+﻿namespace Proyectofloresapi.Models.ViewModelBloque
 {
     public class ListBloqueViewModel
     {

@@ -1,16 +1,18 @@
-﻿using Proyectoflores.Models;
-using Proyectoflores.Models.ViewModelAccess;
-using Proyectofloresapi.Models;
+﻿using Proyectofloresapi.Models;
+using Proyectofloresapi.Models.ViewModelAccess;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
-namespace Proyectoflores.Controllers
+namespace Proyectofloresapi.Controllers
 {
     public class AccesoController : Controller
     {
+        public static string login()
+        {
+            return "index";
+        }
+
         // GET: Accesso
         public ActionResult Login()
         {

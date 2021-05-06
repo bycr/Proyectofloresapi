@@ -1,13 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
-namespace Proyectoflores.Controllers
+namespace Proyectofloresapi.Controllers
 {
     public class ErrorController : Controller
     {
+        public static string errorview()
+        {
+            return "view";
+        }
         // GET: Error
         [HttpGet]
         public ActionResult UnauthorizedOperation(String operacion, String modulo, String msjeErrorExcepcion)

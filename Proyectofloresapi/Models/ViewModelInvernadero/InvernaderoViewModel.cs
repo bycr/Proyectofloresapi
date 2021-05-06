@@ -1,7 +1,7 @@
 ﻿using Recursos;
 using System.ComponentModel.DataAnnotations;
 
-namespace Proyectoflores.Models.ViewModelInvernadero
+namespace Proyectofloresapi.Models.ViewModelInvernadero
 {
     public class InvernaderoViewModel
     {

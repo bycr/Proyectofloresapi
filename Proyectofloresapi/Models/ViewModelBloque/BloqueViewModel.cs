@@ -1,7 +1,7 @@
 ﻿using Recursos;
 using System.ComponentModel.DataAnnotations;
 
-namespace Proyectoflores.Models.ViewModelBloque
+namespace Proyectofloresapi.Models.ViewModelBloque
 {
     public class BloqueViewModel
     {

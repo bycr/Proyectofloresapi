@@ -1,15 +1,31 @@
-﻿using Proyectoflores.Models.ViewModelInvernadero;
+﻿using Proyectofloresapi.Models.ViewModelInvernadero;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
-using Proyectoflores.Models;
 using Proyectofloresapi.Models;
 
-namespace Proyectoflores.Controllers
+namespace Proyectofloresapi.Controllers
 {
     public class InvernaderoController : Controller
     {
+        public static string vistalistaInvernadero()
+        {
+            return "lst";
+        }
+        public static string vistaNuevoInvernadero()
+        {
+            return "model";
+        }
+        public static string vistaEditarInvernadero()
+        {
+            return "mod";
+        }
+        public static string vistaEliminarInvernadero()
+        {
+            return "view";
+        }
+
         // GET: Invernadero
         public ActionResult ListaInvernadero()
         {

@@ -1,4 +1,4 @@
-﻿namespace Proyectoflores.Models.ViewModelAccess
+﻿namespace Proyectofloresapi.Models.ViewModelAccess
 {
     public class Reply
     {

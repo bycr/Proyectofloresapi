@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Proyectoflores.Models.ViewModelsFinca
+namespace Proyectofloresapi.Models.ViewModelsFinca
 {
     public class ListFincaViewModel
     {
