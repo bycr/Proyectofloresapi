@@ -141,8 +141,8 @@ referencia, por favor salga del sistema y no haga mal uso de esta aplicación we
   <data name="_Layout_Bloques" xml:space="preserve">
     <value>Bloques</value>
   </data>
-  <data name="_Layout_Fertirriego" xml:space="preserve">
-    <value>Fertirriego</value>
+  <data name="_Layout_analisis" xml:space="preserve">
+    <value>Análisis y resultados</value>
   </data>
   <data name="_Layout_Fincas" xml:space="preserve">
     <value>Fincas</value>

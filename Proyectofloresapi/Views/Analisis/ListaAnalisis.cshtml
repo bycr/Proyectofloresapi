@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "Lista Analisis";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="row">
+    <div class="col-md-12">
+
+        <label>Datos</label>
+
+        @foreach (double vec in ViewBag.vector)
+        {
+            <li>
+                @vec
+            </li>
+        }
+
+        <label>Marca de clase</label>
+
+        @foreach (double marcaclase in ViewBag.marca_clase)
+        {
+            <li>
+                @marcaclase
+            </li>
+        }
+
+        <label>Frecuencia absoluta</label>
+
+        @foreach (double fabsol in ViewBag.fabsoluta)
+        {
+            <li>
+                @fabsol
+            </li>
+        }
+
+        <label>Frecuencia relativa</label>
+
+        @foreach (double frela in ViewBag.frelativa)
+        {
+            <li>
+                @frela
+            </li>
+        }
+
+        <label>Media</label>
+        @foreach (double medi in ViewBag.mediana)
+        {
+            <li>
+                @medi
+            </li>
+        }
+
+        <label>Moda</label>
+        <br />
+        <label>@ViewBag.moda</label>
+
+    </div>
+
+</div>

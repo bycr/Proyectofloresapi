@@ -1,4 +1,4 @@
-﻿@model Proyectoflores.Models.ViewModelInvernadero.InvernaderoViewModel
+﻿@model Proyectofloresapi.Models.ViewModelInvernadero.InvernaderoViewModel
 @{
     ViewBag.Title = "Editar Invernadero Registrado";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -24,21 +24,21 @@
 {
     @Html.HiddenFor(d => d.Idinvernadero)
 
-<div class="col-md-12">
-    <div class="col-md-6">
-        <b>@Html.LabelFor(d => d.Numeroinvernadero)</b>
-        @Html.TextBoxFor(d => d.Numeroinvernadero, new { onkeydown = "return ValidateNumber(event);", @class = "form-control" })
-        @Html.ValidationMessageFor(d => d.Numeroinvernadero, null, new { @class = "red" })
-    </div>
-    @if (ViewBag.fincaList != null)
-    {
+    <div class="col-md-12">
         <div class="col-md-6">
-            <b>@Html.LabelFor(d => d.Idfinca)</b>
-            @Html.DropDownListFor(d => d.Idfinca, ViewBag.fincaList as SelectList, Recursos.Recurso.Invernadero_seleccionable, new { @class = "form-control" })
+            <b>@Html.LabelFor(d => d.Numeroinvernadero)</b>
+            @Html.TextBoxFor(d => d.Numeroinvernadero, new { onkeydown = "return ValidateNumber(event);", @class = "form-control" })
+            @Html.ValidationMessageFor(d => d.Numeroinvernadero, null, new { @class = "red" })
         </div>
-    }
+        @if (ViewBag.fincaList != null)
+        {
+            <div class="col-md-6">
+                <b>@Html.LabelFor(d => d.Idfinca)</b>
+                @Html.DropDownListFor(d => d.Idfinca, ViewBag.fincaList as SelectList, Recursos.Recurso.Invernadero_seleccionable, new { @class = "form-control" })
+            </div>
+        }
 
-</div>
+    </div>
 
     <div style="text-align:right">
         <input value="@Recursos.Recurso.boton_guardar" class="btn btn-primary" type="submit" />

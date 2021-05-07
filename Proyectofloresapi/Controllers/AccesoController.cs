@@ -1,5 +1,4 @@
 ﻿using Proyectofloresapi.Models;
-using Proyectofloresapi.Models.ViewModelAccess;
 using System;
 using System.Linq;
 using System.Web.Mvc;
@@ -22,7 +21,7 @@ namespace Proyectofloresapi.Controllers
         [HttpPost]
         public ActionResult Login(int User, string Pass)
         {
-            Reply oR = new Reply();
+
 
             try
             {

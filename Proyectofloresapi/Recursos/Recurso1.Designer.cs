@@ -19,7 +19,7 @@ namespace Recursos {
     // a través de una herramienta como ResGen o Visual Studio.
     // Para agregar o quitar un miembro, edite el archivo .ResX y, a continuación, vuelva a ejecutar ResGen
     // con la opción /str o recompile su proyecto de VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Recurso {
@@ -61,20 +61,20 @@ namespace Recursos {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Análisis y resultados.
+        /// </summary>
+        public static string _Layout_analisis {
+            get {
+                return ResourceManager.GetString("_Layout_analisis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Bloques.
         /// </summary>
         public static string _Layout_Bloques {
             get {
                 return ResourceManager.GetString("_Layout_Bloques", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Fertirriego.
-        /// </summary>
-        public static string _Layout_Fertirriego {
-            get {
-                return ResourceManager.GetString("_Layout_Fertirriego", resourceCulture);
             }
         }
         

@@ -141,8 +141,8 @@
   <data name="_Layout_Bloques" xml:space="preserve">
     <value>Blocks</value>
   </data>
-  <data name="_Layout_Fertirriego" xml:space="preserve">
-    <value>Fertigation</value>
+  <data name="_Layout_analisis" xml:space="preserve">
+    <value>Analysis and results</value>
   </data>
   <data name="_Layout_Fincas" xml:space="preserve">
     <value>Farms</value>
