@@ -4,59 +4,89 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<style type="text/css">
+    div {
+        border-top-width: thin;
+        border-right-width: thin;
+        border-bottom-width: thin;
+        border-left-width: thin;
+    }
+</style>
+
 <h2>@ViewBag.Title</h2>
 
-<div class="row">
+<div class="row table-bordered">
     <div class="col-md-12">
 
-        <label>Datos</label>
+        <div class="col-md-2 table-bordered">
+            <label>Datos</label>
+            <br />
+            @foreach (double vec in ViewBag.vector)
+            {
 
-        @foreach (double vec in ViewBag.vector)
-        {
-            <li>
                 @vec
-            </li>
-        }
+                <br />
+            }
+        </div>
 
-        <label>Marca de clase</label>
+        <div class="col-md-2 table-bordered">
+            <label>Marca de clase</label>
+            <br />
+            @foreach (double marcaclase in ViewBag.marca_clase)
+            {
 
-        @foreach (double marcaclase in ViewBag.marca_clase)
-        {
-            <li>
                 @marcaclase
-            </li>
-        }
+                <br />
 
-        <label>Frecuencia absoluta</label>
+            }
+        </div>
 
-        @foreach (double fabsol in ViewBag.fabsoluta)
-        {
-            <li>
+        <div class="col-md-2 table-bordered">
+            <label>Frecuencia absoluta</label>
+            <br />
+            @foreach (double fabsol in ViewBag.fabsoluta)
+            {
                 @fabsol
-            </li>
-        }
+                <br />
+            }
+        </div>
 
-        <label>Frecuencia relativa</label>
+        <div class="col-md-2 table-bordered">
+            <label>Frecuencia absoluta</label>
+            <br />
+            @foreach (double fabsol in ViewBag.fabsoluta)
+            {
+                
+                @fabsol
+                <br />
+            }
+        </div>
 
-        @foreach (double frela in ViewBag.frelativa)
-        {
-            <li>
+        <div class="col-md-2 table-bordered">
+            <label>Frecuencia relativa</label>
+            <br />
+            @foreach (double frela in ViewBag.frelativa)
+            {
                 @frela
-            </li>
-        }
+                <br />
+            }
+        </div>
+   
 
-        <label>Media</label>
+        @*<label>Media</label>
         @foreach (double medi in ViewBag.mediana)
         {
             <li>
                 @medi
             </li>
-        }
+        }*@
 
+    </div>
+
+    <div>
         <label>Moda</label>
         <br />
         <label>@ViewBag.moda</label>
-
     </div>
 
 </div>
