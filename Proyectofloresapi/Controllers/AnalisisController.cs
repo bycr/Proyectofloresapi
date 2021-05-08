@@ -129,7 +129,6 @@ namespace Proyectofloresapi.Controllers
                     float mediana = (float)(((columnas) / 2) + ((columnas + 1) / 2)) / 2;
                     mediana = (float)Math.Truncate(mediana);
 
-
                     for (int i = 0; i < columnas; i++)
                     {
                         if (i == mediana)

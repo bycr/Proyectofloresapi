@@ -9,15 +9,19 @@
 
 namespace Proyectofloresapi.Models
 {
-
+    using System;
+    using System.Collections.Generic;
+    
     public partial class produccion
     {
-        public int Idfertirriego { get; set; }
-        public int valvula { get; set; }
-        public int numerobloque { get; set; }
-        public int numerogoteros { get; set; }
+        public int idproduccion { get; set; }
         public int idfinca { get; set; }
-        public System.DateTime fechacreado { get; set; }
+        public int numerobloque { get; set; }
+        public string variedadflor { get; set; }
+        public int plantas { get; set; }
+        public double areas { get; set; }
+        public int camas { get; set; }
+        public int nsemana { get; set; }
     
         public virtual finca finca { get; set; }
     }
