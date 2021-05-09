@@ -1,4 +1,4 @@
-﻿@model List<Proyectofloresapi.Models.prueba>
+﻿@model List<Proyectofloresapi.Models.ViewModelProduccion.ListProduccionViewModel>
 @{
     ViewBag.Title = "Lista Produccion";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -6,3 +6,43 @@
 
 <h2>@ViewBag.Title</h2>
 
+<div class="row" style="text-align: right; padding:5px;">
+    <a href="~/Produccion/NuevaProduccion" class="btn btn-primary">@Recursos.Recurso.boton_nuevo</a>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+            @foreach (var oELemento in Model)
+            {
+                <tr>
+                    <td>@oELemento.Idproduccion</td>
+                    <td>@oELemento.Idfinca</td>
+                    <td>@oELemento.Numerobloque</td>
+                    <td>@oELemento.Variedadflor</td>
+                    <td>@oELemento.Plantas</td>
+                    <td>@oELemento.Areas</td>
+                    <td>@oELemento.Camas</td>
+                    <td>@oELemento.Nsemana</td>
+                    <td>
+                        <a class="btn btn-primary" href="~/Produccion/EditarProduccion/@oELemento.Idproduccion">@Recursos.Recurso.boton_editar</a>
+                        <a class="btn btn-danger" href="~/Produccion/EliminarProduccion/@oELemento.Idproduccion">@Recursos.Recurso.boton_eliminar</a>
+                    </td>
+                </tr>
+            }
+        </table>
+
+    </div>
+
+</div>

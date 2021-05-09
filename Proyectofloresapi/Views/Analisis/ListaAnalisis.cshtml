@@ -1,17 +1,7 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Lista Analisis";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<style type="text/css">
-    div {
-        border-top-width: thin;
-        border-right-width: thin;
-        border-bottom-width: thin;
-        border-left-width: thin;
-    }
-</style>
 
 <h2>@ViewBag.Title</h2>
 
@@ -56,7 +46,7 @@
             <br />
             @foreach (double fabsol in ViewBag.fabsoluta)
             {
-                
+
                 @fabsol
                 <br />
             }
@@ -71,15 +61,14 @@
                 <br />
             }
         </div>
-   
 
         @*<label>Media</label>
-        @foreach (double medi in ViewBag.mediana)
-        {
-            <li>
-                @medi
-            </li>
-        }*@
+            @foreach (double medi in ViewBag.mediana)
+            {
+                <li>
+                    @medi
+                </li>
+            }*@
 
     </div>
 

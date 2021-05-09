@@ -86,7 +86,6 @@
                         @Html.DropDownListFor(d => d.Idfinca, ViewBag.fincaList as SelectList, Recursos.Recurso.Invernadero_seleccionable, new { @class = "form-control" })
                     </div>
                     <div class="col-md-4">
-                        <b><label class="text-center">dato invernadero </label></b>
                         <b>@Html.LabelFor(d => d.Idinvernadero)</b>
                         @Html.DropDownListFor(m => m.Idinvernadero, new SelectList(""), Recursos.Recurso.Finca_desplegable_municipio, new { @class = "form-control" })
                     </div>

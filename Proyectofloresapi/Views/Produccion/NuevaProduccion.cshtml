@@ -1,0 +1,83 @@
+﻿@model Proyectofloresapi.Models.ProduccionViewModel
+@{
+    ViewBag.Title = "NuevaProduccion";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("NuevaProduccion", "Produccion", FormMethod.Post))
+{
+    <div class="container">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <b>@Html.LabelFor(d => d.Idfinca)</b>
+                        @Html.DropDownListFor(d => d.Idfinca, ViewBag.fincaList as SelectList, Recursos.Recurso.Invernadero_seleccionable, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-6">
+                        <b>@Html.LabelFor(d => d.Numerobloque)</b>
+                        @Html.TextBoxFor(d => d.Numerobloque, new { onkeydown = "return ValidateNumber(event);", @class = "form-control" })
+                        @Html.ValidationMessageFor(d => d.Numerobloque, null, new { @class = "red" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <b>@Html.LabelFor(d => d.Plantas)</b>
+                        @Html.TextBoxFor(d => d.Plantas, new { onkeydown = "return ValidateNumber(event);", @class = "form-control" })
+                        @Html.ValidationMessageFor(d => d.Plantas, null, new { @class = "red" })
+                    </div>
+                    <div class="col-md-6">
+                        <b>@Html.LabelFor(d => d.Areas)</b>
+                        @Html.TextBoxFor(d => d.Areas, new { onkeydown = "return ValidateNumber(event);", @class = "form-control" })
+                        @Html.ValidationMessageFor(d => d.Areas, null, new { @class = "red" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <b>@Html.LabelFor(d => d.Camas)</b>
+                        @Html.TextBoxFor(d => d.Camas, new { onkeydown = "return ValidateNumber(event);", @class = "form-control" })
+                        @Html.ValidationMessageFor(d => d.Camas, null, new { @class = "red" })
+                    </div>
+                    <div class="col-md-6">
+                        <b>@Html.LabelFor(d => d.Nsemana)</b>
+                        @Html.TextBoxFor(d => d.Nsemana, new { onkeydown = "return ValidateNumber(event);", @class = "form-control" })
+                        @Html.ValidationMessageFor(d => d.Nsemana, null, new { @class = "red" })
+                        <br />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-12">
+                    <b>@Html.LabelFor(d => d.Variedadflor)</b>
+                    @Html.TextBoxFor(d => d.Variedadflor, new { onkeydown = "return ValidateNumber(event);", @class = "form-control" })
+                    @Html.ValidationMessageFor(d => d.Variedadflor, null, new { @class = "red" })
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align:right">
+        <input value="@Recursos.Recurso.boton_guardar" class="btn btn-primary" type="submit" />
+    </div>
+}
