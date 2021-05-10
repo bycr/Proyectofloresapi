@@ -252,4 +252,31 @@ referencia, por favor salga del sistema y no haga mal uso de esta aplicación we
   <data name="Bloque_presupuestadomes" xml:space="preserve">
     <value>Presupuestado al mes</value>
   </data>
+  <data name="Produccion_area" xml:space="preserve">
+    <value>Área</value>
+  </data>
+  <data name="Produccion_camas" xml:space="preserve">
+    <value>Camas</value>
+  </data>
+  <data name="Produccion_idbloq" xml:space="preserve">
+    <value>Producción id Bloque</value>
+  </data>
+  <data name="Produccion_nsemanas" xml:space="preserve">
+    <value>Número de semanas</value>
+  </data>
+  <data name="Variedad_flor" xml:space="preserve">
+    <value>Variedad de flor</value>
+  </data>
+  <data name="Error_autorizacion" xml:space="preserve">
+    <value>Sin autorización</value>
+  </data>
+  <data name="Error_modulo" xml:space="preserve">
+    <value>Módulo</value>
+  </data>
+  <data name="Error_operacion" xml:space="preserve">
+    <value>Operación</value>
+  </data>
+  <data name="Error_permiso" xml:space="preserve">
+    <value>No tienes permiso</value>
+  </data>
 </root>

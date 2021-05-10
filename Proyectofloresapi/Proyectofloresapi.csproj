@@ -340,6 +340,7 @@
     <Content Include="Views\Analisis\ListaAnalisis.cshtml" />
     <Content Include="Views\Produccion\NuevaProduccion.cshtml" />
     <Content Include="Views\Produccion\EditarProduccion.cshtml" />
+    <Content Include="Views\Bloque\EditarBloque.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

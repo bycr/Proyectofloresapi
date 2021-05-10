@@ -1,0 +1,120 @@
+﻿@model Proyectofloresapi.Models.ViewModelBloque.BloqueViewModel
+@{
+    ViewBag.Title = "EditarBloque";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>EditarBloque</h2>
+
+<form action="@Url.Content("~/Bloque/NuevoBloque")" method="post">
+
+    @Html.HiddenFor(d => d.Idbloque)
+
+    <div class="container">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-12 text-md-center">
+                    <b> <label> Datos al Año</label> </b>
+                </div>
+
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <b>@Html.LabelFor(d => d.Presupuestadoaño)</b>
+                        @Html.TextBoxFor(d => d.Presupuestadoaño, "", new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-4">
+                        <b>@Html.LabelFor(d => d.Llevamosaño)</b>
+                        @Html.TextBoxFor(d => d.Llevamosaño, "", new { @class = "form-control" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="form-group">
+            <div class="row">
+
+                <div class="col-md-12 text-md-center">
+                    <b> <label> Datos al Mes</label> </b>
+                </div>
+
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <b>@Html.LabelFor(d => d.Presupuestadomes)</b>
+                        @Html.TextBoxFor(d => d.Presupuestadomes, "", new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-4">
+                        <b>@Html.LabelFor(d => d.Llevamosmes)</b>
+                        @Html.TextBoxFor(d => d.Llevamosmes, "", new { @class = "form-control" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="form-group">
+            <div class="row">
+
+                <div class="col-md-12 text-md-center">
+                    <b> <label> Datos adicionales</label> </b>
+                </div>
+
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <b>@Html.LabelFor(d => d.Numerobloque)</b>
+                        @Html.TextBoxFor(d => d.Numerobloque, "", new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-4">
+                        <b>@Html.LabelFor(d => d.Cedula)</b>
+                        @Html.TextBoxFor(d => d.Cedula, "", new { @class = "form-control" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="form-group">
+            <div class="row">
+
+                <div class="col-md-12 text-md-center">
+                    <b> <label> Datos Ubicación</label> </b>
+                </div>
+
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <b>@Html.LabelFor(d => d.Idfinca)</b>
+                        @Html.DropDownListFor(d => d.Idfinca, ViewBag.fincaList as SelectList, Recursos.Recurso.Invernadero_seleccionable, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-4">
+                        <b>@Html.LabelFor(d => d.Idinvernadero)</b>
+                        @Html.DropDownListFor(m => m.Idinvernadero, new SelectList(""), Recursos.Recurso.Finca_desplegable_municipio, new { @class = "form-control" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align:right">
+        <input value="@Recursos.Recurso.boton_guardar" class="btn btn-primary" type="submit" />
+    </div>
+
+</form>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#Idfinca").change(function () {
+            $.get("/Bloque/GetInvernaderoList", { idfinca: $("#Idfinca").val() }, function (data) {
+
+                $("#Idinvernadero").empty();
+                $.each(data, function (Bloque, row) {
+                    $("#Idinvernadero").append("<option value='" + row.idinvernadero + "'>" + row.numeroinvernadero + "</option>")
+
+                });
+            });
+        })
+    });
+</script>

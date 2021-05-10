@@ -249,4 +249,31 @@
   <data name="Bloque_presupuestadomes" xml:space="preserve">
     <value>Budgeted per month</value>
   </data>
+  <data name="Produccion_area" xml:space="preserve">
+    <value>Area</value>
+  </data>
+  <data name="Produccion_camas" xml:space="preserve">
+    <value>Beds</value>
+  </data>
+  <data name="Produccion_idbloq" xml:space="preserve">
+    <value>Production id Block</value>
+  </data>
+  <data name="Produccion_nsemanas" xml:space="preserve">
+    <value>Number of weeks</value>
+  </data>
+  <data name="Variedad_flor" xml:space="preserve">
+    <value>flower variety</value>
+  </data>
+  <data name="Error_autorizacion" xml:space="preserve">
+    <value>Without authorization</value>
+  </data>
+  <data name="Error_modulo" xml:space="preserve">
+    <value>Module</value>
+  </data>
+  <data name="Error_operacion" xml:space="preserve">
+    <value>Operation</value>
+  </data>
+  <data name="Error_permiso" xml:space="preserve">
+    <value>You do not have permission</value>
+  </data>
 </root>

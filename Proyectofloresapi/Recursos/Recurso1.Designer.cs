@@ -223,6 +223,42 @@ namespace Recursos {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Sin autorización.
+        /// </summary>
+        public static string Error_autorizacion {
+            get {
+                return ResourceManager.GetString("Error_autorizacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Módulo.
+        /// </summary>
+        public static string Error_modulo {
+            get {
+                return ResourceManager.GetString("Error_modulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Operación.
+        /// </summary>
+        public static string Error_operacion {
+            get {
+                return ResourceManager.GetString("Error_operacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No tienes permiso.
+        /// </summary>
+        public static string Error_permiso {
+            get {
+                return ResourceManager.GetString("Error_permiso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a seleccione un departamento.
         /// </summary>
         public static string Finca_desplegable_departamento {
@@ -397,6 +433,42 @@ namespace Recursos {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Área.
+        /// </summary>
+        public static string Produccion_area {
+            get {
+                return ResourceManager.GetString("Produccion_area", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Camas.
+        /// </summary>
+        public static string Produccion_camas {
+            get {
+                return ResourceManager.GetString("Produccion_camas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Producción id Bloque.
+        /// </summary>
+        public static string Produccion_idbloq {
+            get {
+                return ResourceManager.GetString("Produccion_idbloq", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Número de semanas.
+        /// </summary>
+        public static string Produccion_nsemanas {
+            get {
+                return ResourceManager.GetString("Produccion_nsemanas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Seleccione un rol.
         /// </summary>
         public static string Seleccionable_rol {
@@ -456,6 +528,15 @@ namespace Recursos {
         public static string Usuario_rol {
             get {
                 return ResourceManager.GetString("Usuario_rol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Variedad de flor.
+        /// </summary>
+        public static string Variedad_flor {
+            get {
+                return ResourceManager.GetString("Variedad_flor", resourceCulture);
             }
         }
     }
