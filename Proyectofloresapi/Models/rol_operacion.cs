@@ -9,9 +9,7 @@
 
 namespace Proyectofloresapi.Models
 {
-    using System;
-    using System.Collections.Generic;
-    
+
     public partial class rol_operacion
     {
         public int idrolope { get; set; }

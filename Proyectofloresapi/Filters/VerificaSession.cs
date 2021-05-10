@@ -1,6 +1,5 @@
 ﻿using Proyectofloresapi.Controllers;
 using Proyectofloresapi.Models;
-using Proyectofloresapi.Models;
 using System;
 using System.Web;
 using System.Web.Mvc;
