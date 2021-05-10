@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using Proyectofloresapi.Models;
+using Proyectofloresapi.Filters;
 
 namespace Proyectofloresapi.Controllers
 {
@@ -27,6 +28,7 @@ namespace Proyectofloresapi.Controllers
         }
 
         // GET: Invernadero
+        [AuthorizeUser(idOperacion:7)]
         public ActionResult ListaInvernadero()
         {
             List<ListInvernaderoViewModel> lst;
@@ -48,6 +50,7 @@ namespace Proyectofloresapi.Controllers
 
         proyectofloresEntities sd = new proyectofloresEntities();
 
+        [AuthorizeUser(idOperacion: 8)]
         public ActionResult NuevoInvernadero()
         {
             List<finca> fincaList = sd.finca.ToList();
@@ -86,6 +89,7 @@ namespace Proyectofloresapi.Controllers
         }
 
         //editar invernaderos
+        [AuthorizeUser(idOperacion: 9)]
         public ActionResult EditarInvernadero(int Id)
         {
             List<finca> fincaList = sd.finca.ToList();
@@ -133,6 +137,7 @@ namespace Proyectofloresapi.Controllers
         }
 
         //Eliminar 
+        [AuthorizeUser(idOperacion: 11)]
         [HttpGet]
         public ActionResult EliminarInvernadero(int Id)
         {

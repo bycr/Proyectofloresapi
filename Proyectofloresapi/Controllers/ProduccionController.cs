@@ -4,12 +4,14 @@ using System.Collections.Generic;
 using System.Web.Mvc;
 using System.Linq;
 using System;
+using Proyectofloresapi.Filters;
 
 namespace Proyectofloresapi.Controllers
 {
     public class ProduccionController : Controller
     {
         // GET: Produccion
+        [AuthorizeUser(idOperacion: 22)]
         public ActionResult ListaProduccion()
         {
             List<ListProduccionViewModel> lst;
@@ -36,6 +38,7 @@ namespace Proyectofloresapi.Controllers
 
         proyectofloresEntities sd = new proyectofloresEntities();
 
+        [AuthorizeUser(idOperacion: 23)]
         public ActionResult NuevaProduccion()
         {
             List<finca> fincaList = sd.finca.ToList();
@@ -78,6 +81,7 @@ namespace Proyectofloresapi.Controllers
         }
 
         //Editar produccion
+        [AuthorizeUser(idOperacion: 24)]
         public ActionResult EditarProduccion(int Id)
         {
             List<finca> fincaList = sd.finca.ToList();
@@ -133,11 +137,10 @@ namespace Proyectofloresapi.Controllers
             {
                 throw new Exception(ex.Message);
             }
-
         }
 
-
         //Eliminar 
+        [AuthorizeUser(idOperacion: 25)]
         [HttpGet]
         public ActionResult EliminarProduccion(int Id)
         {

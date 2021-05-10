@@ -1,4 +1,5 @@
-﻿using Proyectofloresapi.Models;
+﻿using Proyectofloresapi.Filters;
+using Proyectofloresapi.Models;
 using Proyectofloresapi.Models.ViewModelBloque;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,7 @@ namespace Proyectofloresapi.Controllers
         }
 
         // GET: Bloque
+        [AuthorizeUser(idOperacion: 18)]
         public ActionResult ListaBloque()
         {
             List<ListBloqueViewModel> lst;
@@ -58,6 +60,7 @@ namespace Proyectofloresapi.Controllers
         proyectofloresEntities sd = new proyectofloresEntities();
 
         //registro nuevos bloques
+        [AuthorizeUser(idOperacion: 19)]
         public ActionResult NuevoBloque()
         {
             List<finca> fincaList = sd.finca.ToList();
@@ -111,7 +114,7 @@ namespace Proyectofloresapi.Controllers
 
 
         //editar bloque
-
+        [AuthorizeUser(idOperacion: 20)]
         public ActionResult EditarBloque(int Id)
         {
             BloqueViewModel model = new BloqueViewModel();
@@ -169,7 +172,7 @@ namespace Proyectofloresapi.Controllers
         }
 
         //eliminar bloque
-
+        [AuthorizeUser(idOperacion: 21)]
         public ActionResult EliminarBloque(int Id)
         {
 

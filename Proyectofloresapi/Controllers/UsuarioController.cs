@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using Proyectofloresapi.Filters;
 using Proyectofloresapi.Models;
 using Proyectofloresapi.Models.ViewModelUsuario;
 
@@ -28,6 +29,7 @@ namespace Proyectofloresapi.Controllers
         }
 
         // GET: Usuario
+        [AuthorizeUser(idOperacion: 14)]
         public ActionResult ListaUsuario()
         {
             List<ListUsuarioViewModel> lst;
@@ -50,6 +52,7 @@ namespace Proyectofloresapi.Controllers
 
         proyectofloresEntities db = new proyectofloresEntities();
 
+        [AuthorizeUser(idOperacion: 15)]
         public ActionResult NuevoUsuario()
         {
             List<rol> rolList = db.rol.ToList();
@@ -95,6 +98,7 @@ namespace Proyectofloresapi.Controllers
             }
         }
 
+        [AuthorizeUser(idOperacion: 16)]
         public ActionResult EditarUsuario(int Id)
         {
             List<rol> rolList = db.rol.ToList();
@@ -155,6 +159,7 @@ namespace Proyectofloresapi.Controllers
         }
 
         //Eliminar 
+        [AuthorizeUser(idOperacion: 17)]
         [HttpGet]
         public ActionResult EliminarUsuario(int Id)
         {
