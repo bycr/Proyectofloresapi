@@ -1,6 +1,5 @@
 ﻿using Proyectofloresapi.Models;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -47,137 +46,100 @@ namespace Proyectofloresapi.Controllers
                 double amp_Rango = rango / redondeo;
                 Console.WriteLine(amp_Rango);
 
-                int aux1 = 0;
-                int contador_valores = 0;
-                int valor_secundario = 0;
-                var container = 0;
-                int aux2 = 0;
-                int aux3 = 0;
-                int maxRep = 0;
-                int moda = 0;
-                double[] marcaclase = new double[redondeo];
-                double[] frecuencia_absoluta = new double[redondeo];
-                double[] frecuencia_relativa = new double[redondeo];
+                double[] linf = new double [redondeo];
+                double[] lsup = new double [redondeo];
+                double[] mclase = new double[redondeo];
+                double[] fabsoluta = new double[redondeo];
+                double[] frelativa = new double[redondeo];
+                double[] xf = new double[redondeo];
 
-                do
+                for (int i = 0; i<redondeo; i++)
                 {
-                    for (int j = 0; j < columnas; j++)
+                    if (i ==0) {
+                        linf[i] = min;
+                        ViewBag.linf = linf;
+                    }   
+
+                    for(int j = 0; j < redondeo; j++)
                     {
-                        if (aux1 == 0)
+                        if (i == 0)
                         {
-                            if (vector[j] >= min && vector[j] <= min + amp_Rango)
-                            {
-                                contador_valores = contador_valores + 1;
-                            }
+                            lsup[j] = linf[i] + amp_Rango;
                         }
-                        else
+
+                        if(i > 0 && j > 0)
                         {
-                            if (vector[j] >= min && vector[j] <= valor_secundario)
-                            {
-                                contador_valores = contador_valores + 1;
-                            }
+                            linf[i] = lsup[j - 1] + 0.1;
+                            
                         }
-                        //vector[j] = datos1[j];
-                        //calculo media
-                        container = (int)(container + vector[j]);
 
-
-                        //marca de clase 
-                        double marca_clase = (double)((valor_secundario + min) / 2);
-
-                        for (int i = 0; i < redondeo; i++)
+                        if (j > 0)
                         {
-                            marcaclase[i] = marca_clase;
+                            lsup[j] = linf[i] + amp_Rango;
                         }
-                        ViewBag.marca_clase = marcaclase;
-                        //Console.WriteLine(marca_clase);
 
-                        //frecuencia absoluta
-                        for (int k = 0; k < redondeo; k++)
-                        {
-                            frecuencia_absoluta[k] = contador_valores;
-                        }
-                        ViewBag.fabsoluta = frecuencia_absoluta;
-                        //Console.WriteLine("frecuencia absoluta : " + contador_valores);
-
-                        //calculo de frecunecia relativa
-                        float f_relativa = (float)contador_valores / bloquecount;
-                        for (int k = 0; k < redondeo; k++)
-                        {
-                            frecuencia_relativa[k] = f_relativa;
-                        }
-                        ViewBag.frelativa = frecuencia_relativa;
-                        Console.WriteLine("frecuencia relativa : " + f_relativa);
-
-                    }
-
-                    aux1 += 1;
-                    aux2 += 2;
-
-                    contador_valores = 0;
-                    min = valor_secundario + 1;
-
-                } while (aux1 != redondeo);
-
-                //Media
-                float container2 = (float)container / columnas;
-                Console.WriteLine("Media = " + container2);
-
-                //Mediana
-                if (columnas % 2 == 0)
-                {
-                    float mediana = (float)(((columnas) / 2) + ((columnas + 1) / 2)) / 2;
-                    mediana = (float)Math.Truncate(mediana);
-
-                    for (int i = 0; i < columnas; i++)
-                    {
-                        if (i == mediana)
-                        {
-                            Console.WriteLine("mediana = " + vector[i]);
-                            ViewBag.mediana = vector;
-                        }
-                    }
-                }
-                else
-                {
-                    float mediana = (float)(columnas + 1) / 2;
-                    mediana = (float)Math.Truncate(mediana);
-
-                    for (int i = 0; i < columnas; i++)
-                    {
-                        if (i == mediana)
-                        {
-                            Console.WriteLine("mediana = " + vector[i]);
-                        }
+                        ViewBag.lsup = lsup;
+                        
                     }
                 }
 
-                //Moda
+                //marca de clase
+                int l = 0, m = 0;
+                for (int k = 0; k < redondeo; k++)
+                {                 
+                    mclase[k] = ((linf[l] + lsup[m]) / 2);
+                    l++;
+                    m++;
+                }
+                ViewBag.marca_clase = mclase;
 
-                for (int i = 0; i < columnas; i++)
+                //frecuencia absoluta
+                l = 0; m = 0;
+                double acumulado = 0;
+                int o;
+                for (int n = 0; n < redondeo; n++)
                 {
-                    int f = 0;
-                    for (int j = 0; j < columnas; j++)
+                    for (o = 0; o < columnas; o++)
                     {
-                        if (vector[i] == vector[j])
+                        if (vector[o] >= linf[l] && vector[o] <= lsup[m])
                         {
-                            aux3 = aux3 + 1;
-                        }
-
-                        if (f > maxRep)
-                        {
-                            moda = (int)vector[i];
-                            maxRep = aux3;
+                            fabsoluta[n] += 1;
                         }
                     }
+                    l++;
+                    m++;
+
+                    acumulado += fabsoluta[n];
                 }
-                Console.WriteLine("moda : " + moda);
-                ViewBag.moda = moda;
+                ViewBag.fabsoluta = fabsoluta;
 
-                List<double> lst = vector.ToList();
-                ViewBag.vector = lst;
+                //frecuencia relativa 
+                o = 0;
+                for (int p = 0; p<redondeo; p++)
+                {
+                    frelativa[p] = fabsoluta[o] / acumulado;
+                    o++;
+                }
+                ViewBag.frelativa = frelativa;
 
-                //pasar datos del array o la lista al dato1 en el modelo prueba                
+                //xf
+                int mc = 0, fa = 0;
+                double acumxf = 0;
+                for (int q = 0; q<redondeo; q++)
+                {
+                    xf[q] = mclase[mc] * fabsoluta[fa];
+                    acumxf += xf[q];
+                    mc++;
+                    fa++;
+                }
+                ViewBag.xf = xf;
+
+                //media
+                double media = acumxf / acumulado;
+                ViewBag.media = media;
+
+                //moda
+
 
                 return View();
             }

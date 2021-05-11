@@ -9,12 +9,23 @@
     <div class="col-md-12">
 
         <div class="col-md-2 table-bordered">
-            <label>Datos</label>
+            <label>Limite inferior</label>
             <br />
-            @foreach (double vec in ViewBag.vector)
+            @foreach (double linf in ViewBag.linf)
             {
 
-                @vec
+                @linf
+                <br />
+            }
+        </div>
+
+        <div class="col-md-2 table-bordered">
+            <label>Limite superior</label>
+            <br />
+            @foreach (double lsup in ViewBag.lsup)
+            {
+
+                @lsup
                 <br />
             }
         </div>
@@ -24,29 +35,17 @@
             <br />
             @foreach (double marcaclase in ViewBag.marca_clase)
             {
-
                 @marcaclase
                 <br />
-
             }
         </div>
+
 
         <div class="col-md-2 table-bordered">
             <label>Frecuencia absoluta</label>
             <br />
             @foreach (double fabsol in ViewBag.fabsoluta)
             {
-                @fabsol
-                <br />
-            }
-        </div>
-
-        <div class="col-md-2 table-bordered">
-            <label>Frecuencia absoluta</label>
-            <br />
-            @foreach (double fabsol in ViewBag.fabsoluta)
-            {
-
                 @fabsol
                 <br />
             }
@@ -62,20 +61,32 @@
             }
         </div>
 
-        @*<label>Media</label>
-            @foreach (double medi in ViewBag.mediana)
+        <div class="col-md-2 table-bordered">
+            <label>XF</label>
+            <br />
+            @foreach (double xf in ViewBag.xf)
             {
-                <li>
-                    @medi
-                </li>
-            }*@
+                @xf
+                <br />
+            }
+        </div>
 
     </div>
 
-    <div>
-        <label>Moda</label>
-        <br />
-        <label>@ViewBag.moda</label>
+    <div class="col-md-12">
+        <div class="col-md-2 table-bordered">
+            <label>Media</label>
+            <br />
+            <label>@ViewBag.media</label>
+        </div>
+
+        <div class="col-md-2 table-bordered">
+            <label>Moda</label>
+            <br />
+            <label>@ViewBag.moda</label>
+        </div>
+
+
     </div>
 
 </div>
