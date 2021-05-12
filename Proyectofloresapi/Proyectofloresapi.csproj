@@ -165,6 +165,7 @@
     <Compile Include="Controllers\AccesoController.cs" />
     <Compile Include="Controllers\AnalisisController.cs" />
     <Compile Include="Controllers\BloqueController.cs" />
+    <Compile Include="Controllers\CatalogoController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\FincaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -200,6 +201,7 @@
     <Compile Include="Models\finca.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\FloresViewModel.cs" />
     <Compile Include="Models\invernadero.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
@@ -341,6 +343,7 @@
     <Content Include="Views\Produccion\NuevaProduccion.cshtml" />
     <Content Include="Views\Produccion\EditarProduccion.cshtml" />
     <Content Include="Views\Bloque\EditarBloque.cshtml" />
+    <Content Include="Views\Catalogo\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

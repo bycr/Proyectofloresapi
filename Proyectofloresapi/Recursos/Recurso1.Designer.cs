@@ -79,6 +79,15 @@ namespace Recursos {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Catálogo.
+        /// </summary>
+        public static string _Layout_Catalogo {
+            get {
+                return ResourceManager.GetString("_Layout_Catalogo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Fincas.
         /// </summary>
         public static string _Layout_Fincas {

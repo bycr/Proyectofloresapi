@@ -276,4 +276,7 @@
   <data name="Error_permiso" xml:space="preserve">
     <value>You do not have permission</value>
   </data>
+  <data name="_Layout_Catalogo" xml:space="preserve">
+    <value>Catalogue</value>
+  </data>
 </root>

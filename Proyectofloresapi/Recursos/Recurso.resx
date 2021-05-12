@@ -279,4 +279,7 @@ referencia, por favor salga del sistema y no haga mal uso de esta aplicación we
   <data name="Error_permiso" xml:space="preserve">
     <value>No tienes permiso</value>
   </data>
+  <data name="_Layout_Catalogo" xml:space="preserve">
+    <value>Catálogo</value>
+  </data>
 </root>

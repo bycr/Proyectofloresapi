@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Proyectofloresapi.Models.FloresViewModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Color)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Relleno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Paqueteagranel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Longituddeltallo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Talloracimo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comentarios)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Color)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Relleno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Paqueteagranel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Longituddeltallo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Talloracimo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comentarios)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
