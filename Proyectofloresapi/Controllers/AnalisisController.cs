@@ -52,15 +52,15 @@ namespace Proyectofloresapi.Controllers
                 double[] fabsoluta = new double[redondeo];
                 double[] frelativa = new double[redondeo];
                 double[] xf = new double[redondeo];
-
-                for (int i = 0; i<redondeo; i++)
+                int i = 0, j = 0; 
+                for (i = 0; i<redondeo; i++)
                 {
                     if (i ==0) {
                         linf[i] = min;
                         ViewBag.linf = linf;
                     }   
 
-                    for(int j = 0; j < redondeo; j++)
+                    for(j = 0; j < redondeo; j++)
                     {
                         if (i == 0)
                         {
@@ -83,6 +83,17 @@ namespace Proyectofloresapi.Controllers
                     }
                 }
 
+                //amplitud
+                int a = 0;
+                i = 0 ; j = 0;
+                double[] amplitud = new double[redondeo];
+                for(a = 0; a <redondeo; a++)
+                {
+                    amplitud[a] = lsup[j] - linf[i];
+                    i++;
+                    j++;
+                }
+
                 //marca de clase
                 int l = 0, m = 0;
                 for (int k = 0; k < redondeo; k++)
@@ -94,9 +105,10 @@ namespace Proyectofloresapi.Controllers
                 ViewBag.marca_clase = mclase;
 
                 //frecuencia absoluta
-                l = 0; m = 0;
+                l = 0; m = 0; 
                 double acumulado = 0;
-                int o;
+                int o, r=0;
+                double[] acum_fabsol = new double[redondeo]; 
                 for (int n = 0; n < redondeo; n++)
                 {
                     for (o = 0; o < columnas; o++)
@@ -110,6 +122,16 @@ namespace Proyectofloresapi.Controllers
                     m++;
 
                     acumulado += fabsoluta[n];
+                    if(r ==0  && n == 0)
+                    {
+                        acum_fabsol[r] = fabsoluta[n];
+                    }
+                    if (r > 0 && n > 0)
+                    {
+                        acum_fabsol[r] = fabsoluta[n]+ fabsoluta[n-1];
+                    }
+                    r++;
+
                 }
                 ViewBag.fabsoluta = fabsoluta;
 
@@ -138,7 +160,90 @@ namespace Proyectofloresapi.Controllers
                 double media = acumxf / acumulado;
                 ViewBag.media = media;
 
-                //moda
+                //mediana
+                int acum = 0, dato = 0, Fi_i = 0;
+                double li = 0, amp = 0, mediana = 0 ;
+                r = 0; i = 0; a = 0 ;
+                if (acumulado % 2 == 0)
+                {
+                    //acumulado/2
+                    acum = (int) Math.Round(acumulado / 2);
+                    for (int s = 0; s < redondeo; s++)
+                    {
+
+                        if (acum < acum_fabsol[s] && s == 0)
+                        {
+                            Fi_i = 0;
+                            dato = (int)acum_fabsol[s];
+                            //valor del limite inferior
+                            if (i == s && a == s)
+                            {
+                                li = linf[i];
+                                amp = amplitud[a];
+                            }
+                        }
+
+                        if (s > 0)
+                        {
+                            if (acum > acum_fabsol[s-1] && acum < acum_fabsol[s])
+                            {
+                                Fi_i = (int)acum_fabsol[s - 1];
+                                dato = (int)acum_fabsol[s];
+                                //valor del limite inferior
+                                if (i == s && a == s)
+                                {
+                                    li = linf[i];
+                                    amp = amplitud[a];
+                                }
+                            }
+                        }
+
+                        i++;
+                        a++;
+                    }
+
+                    mediana = li + ((acumulado / 2) - Fi_i / dato) * amp;
+                }
+                else
+                {
+                    acum = (int)Math.Round((acumulado + 1) / 2);
+                    for (int s = 0; s < redondeo; s++)
+                    {
+                        if (acum < acum_fabsol[s] && s == 0)
+                        {
+                            Fi_i = 0;
+                            dato = (int)acum_fabsol[s];
+                            //valor del limite inferior
+                            if (i == s && a == s)
+                            {
+                                li = linf[i];
+                                amp = amplitud[a];
+                            }
+                        }
+                        if (s > 0)
+                        {           
+                            if (acum > acum_fabsol[s - 1] && acum < acum_fabsol[s])
+                            {
+                                Fi_i = (int)acum_fabsol[s - 1];
+                                dato = (int)acum_fabsol[s];
+                                //valor del limite inferior
+                                if (i == s && a == s)
+                                {
+                                    li = linf[i];
+                                    amp = amplitud[a];
+                                }
+                            }
+                        }
+                        i++;
+                        a++;
+                    }
+
+                    mediana = li + ((acumulado / 2) - Fi_i / dato) * amp;
+                }
+                //imprimos la mediana
+                ViewBag.mediana = mediana;
+
+
 
 
                 return View();
