@@ -246,6 +246,64 @@ namespace Proyectofloresapi.Controllers
 
 
 
+                //analisis de produccion 
+
+                var oProduccion = new produccion();
+
+                int nproducc = db.produccion.Count();
+
+                var querynplantas = (from c in db.produccion
+                             select c.plantas).ToArray();
+
+                var queryncamas = (from c in db.produccion
+                                     select c.camas).ToArray();
+
+                //cargamos el numero de plantas
+                int[] pro_plantas = querynplantas;
+
+                ViewBag.producplantas = pro_plantas;
+
+                //cargamos el numero de camas
+                int[] pro_camas = queryncamas;
+
+                ViewBag.ncamas = pro_camas;
+
+                double[] acumula_ncamas = new double[nproducc];
+                int x = 0; 
+                int y = 0;
+                double acumuladotot = 0;
+                for (x = 0; x< nproducc; x++)
+                {
+                    if (y == 0 && x == 0)
+                    {
+                        acumula_ncamas[x] = pro_camas[y];
+                    }
+                    if(y > 0 && x > 0)
+                    {
+                        acumula_ncamas[x] = pro_camas[y] + pro_camas[y - 1];
+                        acumuladotot += acumula_ncamas[x];
+                    }
+                    y++;
+                }
+
+                ViewBag.facumcamas = acumula_ncamas;
+
+
+                //multipliacacion xi*f
+
+                double[] med_frec = new double[nproducc];
+
+                int mediap = 0;
+                x = 0; y=0;
+
+                for(mediap =0; mediap< nproducc; mediap++)
+                {
+                    med_frec[mediap] = pro_plantas[x] * pro_camas[y];
+                    x++;
+                    y++;
+                }
+                ViewBag.medifrec = med_frec;
+
                 return View();
             }
         }

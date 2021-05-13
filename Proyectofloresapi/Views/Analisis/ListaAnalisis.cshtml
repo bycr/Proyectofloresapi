@@ -91,8 +91,59 @@
             <br />
             <label>@ViewBag.mediana</label>
         </div>
+        
+    </div>
 
+    <br /> 
+</div>
 
+<div class="row table-bordered">
+    <div class="col-md-12">
+
+        <div class="col-md-2 table-bordered">
+            <label>Produccion flores</label>
+            <br />
+            @foreach (int proplantas in ViewBag.producplantas)
+            {
+
+                @proplantas
+                <br />
+            }
+        </div>
+
+        <div class="col-md-2 table-bordered">
+            <label>numero de camas</label>
+            <br />
+            @foreach (int ncamas in ViewBag.ncamas)
+            {
+
+                @ncamas
+                <br />
+            }
+        </div>
+
+        <div class="col-md-2 table-bordered">
+            <label>frecuencia acumulada</label>
+            <br />
+            @foreach (double facumcamas in ViewBag.facumcamas)
+            {
+
+                @facumcamas
+                <br />
+            }
+        </div>
+
+        <div class="col-md-2 table-bordered">
+            <label>frecuencia acumulada</label>
+            <br />
+            @foreach (double medifrecuen in ViewBag.medifrec)
+            {
+
+                @medifrecuen
+                <br />
+            }
+        </div>
+        
 
     </div>
 

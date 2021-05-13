@@ -31,7 +31,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="col-md-6">
-                        <b>@Html.LabelFor(d => d.Plantas)</b>
+                        <b>@Html.LabelFor(d => d.Plantas)</b> 
                         @Html.TextBoxFor(d => d.Plantas, new { onkeydown = "return ValidateNumber(event);", @class = "form-control" })
                         @Html.ValidationMessageFor(d => d.Plantas, null, new { @class = "red" })
                     </div>

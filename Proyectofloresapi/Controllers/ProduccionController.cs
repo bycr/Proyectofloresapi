@@ -11,7 +11,7 @@ namespace Proyectofloresapi.Controllers
     public class ProduccionController : Controller
     {
         // GET: Produccion
-        [AuthorizeUser(idOperacion: 22)]
+        //[AuthorizeUser(idOperacion: 22)]
         public ActionResult ListaProduccion()
         {
             List<ListProduccionViewModel> lst;
@@ -38,7 +38,7 @@ namespace Proyectofloresapi.Controllers
 
         proyectofloresEntities sd = new proyectofloresEntities();
 
-        [AuthorizeUser(idOperacion: 23)]
+        //[AuthorizeUser(idOperacion: 23)]
         public ActionResult NuevaProduccion()
         {
             List<finca> fincaList = sd.finca.ToList();
@@ -81,7 +81,7 @@ namespace Proyectofloresapi.Controllers
         }
 
         //Editar produccion
-        [AuthorizeUser(idOperacion: 24)]
+        //[AuthorizeUser(idOperacion: 24)]
         public ActionResult EditarProduccion(int Id)
         {
             List<finca> fincaList = sd.finca.ToList();
@@ -140,7 +140,7 @@ namespace Proyectofloresapi.Controllers
         }
 
         //Eliminar 
-        [AuthorizeUser(idOperacion: 25)]
+        //[AuthorizeUser(idOperacion: 25)]
         [HttpGet]
         public ActionResult EliminarProduccion(int Id)
         {
