@@ -78,7 +78,7 @@
           <Property Name="idproduccion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="idfinca" Type="int" Nullable="false" />
           <Property Name="numerobloque" Type="int" Nullable="false" />
-          <Property Name="variedadflor" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="variedadflor" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="plantas" Type="int" Nullable="false" />
           <Property Name="areas" Type="float" Nullable="false" />
           <Property Name="camas" Type="int" Nullable="false" />
@@ -672,7 +672,7 @@
           <Property Name="idproduccion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="idfinca" Type="Int32" Nullable="false" />
           <Property Name="numerobloque" Type="Int32" Nullable="false" />
-          <Property Name="variedadflor" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="variedadflor" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="plantas" Type="Int32" Nullable="false" />
           <Property Name="areas" Type="Double" Nullable="false" />
           <Property Name="camas" Type="Int32" Nullable="false" />
