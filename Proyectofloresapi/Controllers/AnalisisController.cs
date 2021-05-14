@@ -281,8 +281,9 @@ namespace Proyectofloresapi.Controllers
                     if(y > 0 && x > 0)
                     {
                         acumula_ncamas[x] = pro_camas[y] + pro_camas[y - 1];
-                        acumuladotot += acumula_ncamas[x];
+                        
                     }
+                    acumuladotot += acumula_ncamas[x];
                     y++;
                 }
 
@@ -295,14 +296,32 @@ namespace Proyectofloresapi.Controllers
 
                 int mediap = 0;
                 x = 0; y=0;
-
+                double acum_xif=0;
                 for(mediap =0; mediap< nproducc; mediap++)
                 {
                     med_frec[mediap] = pro_plantas[x] * pro_camas[y];
+                    acum_xif += med_frec[mediap];
                     x++;
                     y++;
                 }
                 ViewBag.medifrec = med_frec;
+
+                //calculo error absoluto
+
+                media = acum_xif/ acumuladotot;
+                double[] Error_Absol = new double[nproducc];
+                int ea = 0;
+                int pro =0;
+                double acum_ea = 0; 
+                for(ea = 0; ea < nproducc; ea++)
+                {
+                    Error_Absol[ea] = media - pro_plantas[pro];
+                    acum_ea += Error_Absol[ea];
+                    pro++;
+
+                }
+
+                ViewBag.cal_ea = Error_Absol;
 
                 return View();
             }
