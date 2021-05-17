@@ -133,6 +133,105 @@ namespace Recursos {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Error absoluto.
+        /// </summary>
+        public static string Analisis_Eabsoluto {
+            get {
+                return ResourceManager.GetString("Analisis_Eabsoluto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Frecuencia absoluta.
+        /// </summary>
+        public static string Analisis_fabsoluta {
+            get {
+                return ResourceManager.GetString("Analisis_fabsoluta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Frecuencia acumulada.
+        /// </summary>
+        public static string Analisis_facumulada {
+            get {
+                return ResourceManager.GetString("Analisis_facumulada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Límite inferior.
+        /// </summary>
+        public static string Analisis_linferior {
+            get {
+                return ResourceManager.GetString("Analisis_linferior", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Límite superior.
+        /// </summary>
+        public static string Analisis_lsuperior {
+            get {
+                return ResourceManager.GetString("Analisis_lsuperior", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Marca de clase.
+        /// </summary>
+        public static string Analisis_mclase {
+            get {
+                return ResourceManager.GetString("Analisis_mclase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Media.
+        /// </summary>
+        public static string Analisis_media {
+            get {
+                return ResourceManager.GetString("Analisis_media", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Mediana.
+        /// </summary>
+        public static string Analisis_mediana {
+            get {
+                return ResourceManager.GetString("Analisis_mediana", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Número de camas.
+        /// </summary>
+        public static string Analisis_ncamas {
+            get {
+                return ResourceManager.GetString("Analisis_ncamas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Producción flores.
+        /// </summary>
+        public static string Analisis_proflores {
+            get {
+                return ResourceManager.GetString("Analisis_proflores", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Análisis de datos.
+        /// </summary>
+        public static string Analisis_titulo {
+            get {
+                return ResourceManager.GetString("Analisis_titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Diferencia al año.
         /// </summary>
         public static string Bloque_diferenciaaño {
@@ -147,6 +246,42 @@ namespace Recursos {
         public static string Bloque_diferenciames {
             get {
                 return ResourceManager.GetString("Bloque_diferenciames", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Editar bloque registrado.
+        /// </summary>
+        public static string Bloque_edit {
+            get {
+                return ResourceManager.GetString("Bloque_edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Fecha registrado.
+        /// </summary>
+        public static string Bloque_fecha {
+            get {
+                return ResourceManager.GetString("Bloque_fecha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Producciones de bloques.
+        /// </summary>
+        public static string Bloque_lista {
+            get {
+                return ResourceManager.GetString("Bloque_lista", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Llevamos al año.
+        /// </summary>
+        public static string Bloque_llevamos_año {
+            get {
+                return ResourceManager.GetString("Bloque_llevamos_año", resourceCulture);
             }
         }
         
@@ -178,6 +313,15 @@ namespace Recursos {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Presupuestado al año.
+        /// </summary>
+        public static string Bloque_ppto_año {
+            get {
+                return ResourceManager.GetString("Bloque_ppto_año", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Presupuestado al  año.
         /// </summary>
         public static string Bloque_presupuestadoaño {
@@ -192,6 +336,15 @@ namespace Recursos {
         public static string Bloque_presupuestadomes {
             get {
                 return ResourceManager.GetString("Bloque_presupuestadomes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Registrar producción bloque.
+        /// </summary>
+        public static string Bloque_registro {
+            get {
+                return ResourceManager.GetString("Bloque_registro", resourceCulture);
             }
         }
         
@@ -228,6 +381,15 @@ namespace Recursos {
         public static string boton_nuevo {
             get {
                 return ResourceManager.GetString("boton_nuevo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Seleccione un invernadero.
+        /// </summary>
+        public static string Desplegable_invernadero {
+            get {
+                return ResourceManager.GetString("Desplegable_invernadero", resourceCulture);
             }
         }
         
@@ -286,6 +448,15 @@ namespace Recursos {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Editar finca registrada.
+        /// </summary>
+        public static string Finca_edit {
+            get {
+                return ResourceManager.GetString("Finca_edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a El campo {0} es requerido.
         /// </summary>
         public static string Finca_errorm_nombre {
@@ -331,6 +502,24 @@ namespace Recursos {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Registrar nueva finca.
+        /// </summary>
+        public static string Finca_rnueva {
+            get {
+                return ResourceManager.GetString("Finca_rnueva", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Fincas registradas.
+        /// </summary>
+        public static string Fincas_registradas {
+            get {
+                return ResourceManager.GetString("Fincas_registradas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Este sistema de inventario esta desarrollado único y exclusivamente para los
         ///propietarios y administradores de las empresas de flores, si usted por algún motivo
         ///logro acceder sin hacer parte de alguno de estos dos últimos a los cuales se hace
@@ -357,6 +546,15 @@ namespace Recursos {
         public static string Home_Titulo {
             get {
                 return ResourceManager.GetString("Home_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Editar Invernadero Registrado.
+        /// </summary>
+        public static string Invernadero_edit {
+            get {
+                return ResourceManager.GetString("Invernadero_edit", resourceCulture);
             }
         }
         
@@ -393,6 +591,24 @@ namespace Recursos {
         public static string Invernadero_id {
             get {
                 return ResourceManager.GetString("Invernadero_id", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Registrar nuevo invernadero.
+        /// </summary>
+        public static string invernadero_ingreso {
+            get {
+                return ResourceManager.GetString("invernadero_ingreso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Invernaderos registrados.
+        /// </summary>
+        public static string invernadero_listregis {
+            get {
+                return ResourceManager.GetString("invernadero_listregis", resourceCulture);
             }
         }
         
@@ -460,6 +676,24 @@ namespace Recursos {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Editar producción registrada.
+        /// </summary>
+        public static string Produccion_editar {
+            get {
+                return ResourceManager.GetString("Produccion_editar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Id producción.
+        /// </summary>
+        public static string Produccion_id {
+            get {
+                return ResourceManager.GetString("Produccion_id", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Producción id Bloque.
         /// </summary>
         public static string Produccion_idbloq {
@@ -474,6 +708,33 @@ namespace Recursos {
         public static string Produccion_nsemanas {
             get {
                 return ResourceManager.GetString("Produccion_nsemanas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Registrar producción.
+        /// </summary>
+        public static string Produccion_nueva {
+            get {
+                return ResourceManager.GetString("Produccion_nueva", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Número de plantas.
+        /// </summary>
+        public static string Produccion_plantas {
+            get {
+                return ResourceManager.GetString("Produccion_plantas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Registro de produccion.
+        /// </summary>
+        public static string produccion_registrada {
+            get {
+                return ResourceManager.GetString("produccion_registrada", resourceCulture);
             }
         }
         
@@ -523,6 +784,15 @@ namespace Recursos {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Editar usuario registrado.
+        /// </summary>
+        public static string Usuario_edit {
+            get {
+                return ResourceManager.GetString("Usuario_edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Nombres.
         /// </summary>
         public static string Usuario_nombres {
@@ -537,6 +807,24 @@ namespace Recursos {
         public static string Usuario_rol {
             get {
                 return ResourceManager.GetString("Usuario_rol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Registrar nuevo usuario.
+        /// </summary>
+        public static string Usuarios_newregis {
+            get {
+                return ResourceManager.GetString("Usuarios_newregis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Usuarios registrados.
+        /// </summary>
+        public static string Usuarios_regist {
+            get {
+                return ResourceManager.GetString("Usuarios_regist", resourceCulture);
             }
         }
         

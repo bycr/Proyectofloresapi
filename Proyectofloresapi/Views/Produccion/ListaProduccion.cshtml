@@ -1,6 +1,6 @@
 ﻿@model List<Proyectofloresapi.Models.ViewModelProduccion.ListProduccionViewModel>
 @{
-    ViewBag.Title = "Lista Produccion";
+    ViewBag.Title = Recursos.Recurso.produccion_registrada;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -14,21 +14,21 @@
     <div class="col-md-12">
         <table class="table">
             <tr>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
+
+                <th>@Recursos.Recurso.Invernadero_finca</th>
+                <th>@Recursos.Recurso.Bloque_numero</th>
+                <th>@Recursos.Recurso.Variedad_flor</th>
+                <th>@Recursos.Recurso.Produccion_plantas</th>
+                <th>@Recursos.Recurso.Produccion_area</th>
+                <th>@Recursos.Recurso.Produccion_camas</th>
+                <th>@Recursos.Recurso.Produccion_nsemanas</th>
                 <th></th>
             </tr>
             @foreach (var oELemento in Model)
             {
                 <tr>
-                    <td>@oELemento.Idproduccion</td>
-                    <td>@oELemento.Idfinca</td>
+
+                    <td>@oELemento.Namefinca</td>
                     <td>@oELemento.Numerobloque</td>
                     <td>@oELemento.Variedadflor</td>
                     <td>@oELemento.Plantas</td>

@@ -1,6 +1,6 @@
 ﻿@model Proyectofloresapi.Models.ViewModelsFinca.FincaViewModel
 @{
-    ViewBag.Title = "Crear nueva finca";
+    ViewBag.Title = Recursos.Recurso.Finca_rnueva;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -8,8 +8,6 @@
 
 @*NuevaFinca nombre metodo *@
 @*Finca nombre del controlador *@
-
-
 @using (Html.BeginForm("NuevaFinca", "Finca", FormMethod.Post))
 {
 

@@ -1,6 +1,6 @@
 ﻿@model List<Proyectofloresapi.Models.ViewModelUsuario.ListUsuarioViewModel>
 @{
-    ViewBag.Title = "Lista de Usuarios";
+    ViewBag.Title = Recursos.Recurso.Usuarios_regist;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -28,8 +28,8 @@
                     <td>@oElemento.Cedula</td>
                     <td>@oElemento.Nombres</td>
                     <td>@oElemento.Apellidos</td>
-                    <td>@oElemento.Idrol</td>
-                    <td>@oElemento.Idfinca</td>
+                    <td>@oElemento.Rolname</td>
+                    <td>@oElemento.Namefinca</td>
                     <td>@oElemento.Email</td>
                     <td>
                         <a class="btn btn-primary" href="~/Usuario/EditarUsuario/@oElemento.Cedula">@Recursos.Recurso.boton_editar</a>

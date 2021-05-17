@@ -1,6 +1,6 @@
 ﻿@model List<Proyectofloresapi.Models.ViewModelInvernadero.ListInvernaderoViewModel>
 @{
-    ViewBag.Title = "Lista de Invernaderos";
+    ViewBag.Title = Recursos.Recurso.invernadero_listregis;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -14,7 +14,6 @@
     <div class="col-md-12">
         <table class="table">
             <tr>
-                <th>@Recursos.Recurso.Invernadero_id</th>
                 <th>@Recursos.Recurso.Invernadero_numero</th>
                 <th>@Recursos.Recurso.Invernadero_finca</th>
                 <th></th>
@@ -22,9 +21,8 @@
             @foreach (var oElemento in Model)
             {
                 <tr>
-                    <td>@oElemento.Idinvernadero</td>
                     <td>@oElemento.Numeroinvernadero</td>
-                    <td>@oElemento.Idfinca</td>
+                    <td>@oElemento.Namefinca</td>
                     <td>
                         <a class="btn btn-primary" href="~/Invernadero/EditarInvernadero/@oElemento.Idinvernadero">@Recursos.Recurso.boton_editar</a>
                         <a class="btn btn-danger" href="~/Invernadero/EliminarInvernadero/@oElemento.Idinvernadero">@Recursos.Recurso.boton_eliminar</a>

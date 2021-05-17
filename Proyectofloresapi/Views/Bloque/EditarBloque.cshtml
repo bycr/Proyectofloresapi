@@ -1,10 +1,10 @@
 ﻿@model Proyectofloresapi.Models.ViewModelBloque.BloqueViewModel
 @{
-    ViewBag.Title = "EditarBloque";
+    ViewBag.Title = Recursos.Recurso.Bloque_edit;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>EditarBloque</h2>
+<h2>ViewBag.Title</h2>
 
 <form action="@Url.Content("~/Bloque/NuevoBloque")" method="post">
 
@@ -86,11 +86,11 @@
                 <div class="row text-center">
                     <div class="col-md-4">
                         <b>@Html.LabelFor(d => d.Idfinca)</b>
-                        @Html.DropDownListFor(d => d.Idfinca, ViewBag.fincaList as SelectList, Recursos.Recurso.Invernadero_seleccionable, new { @class = "form-control" })
+                        @Html.DropDownListFor(d => d.Idfinca, ViewBag.fincaList as SelectList, Recursos.Recurso.Finca_Lista_nombre, new { @class = "form-control" })
                     </div>
                     <div class="col-md-4">
                         <b>@Html.LabelFor(d => d.Idinvernadero)</b>
-                        @Html.DropDownListFor(m => m.Idinvernadero, new SelectList(""), Recursos.Recurso.Finca_desplegable_municipio, new { @class = "form-control" })
+                        @Html.DropDownListFor(m => m.Idinvernadero, new SelectList(""), Recursos.Recurso.Desplegable_invernadero, new { @class = "form-control" })
                     </div>
                 </div>
             </div>

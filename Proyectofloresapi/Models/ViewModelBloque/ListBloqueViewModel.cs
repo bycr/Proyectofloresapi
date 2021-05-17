@@ -13,6 +13,7 @@
         public int Cedula { get; set; }
         public int Idinvernadero { get; set; }
         public int Idfinca { get; set; }
+        public string NameFinca { get; set; }
         public System.DateTime Fechacreado { get; set; }
     }
 }

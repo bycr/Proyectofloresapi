@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Lista Analisis";
+    ViewBag.Title = Recursos.Recurso.Analisis_titulo;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -9,7 +9,7 @@
     <div class="col-md-12">
 
         <div class="col-md-2 table-bordered">
-            <label>Limite inferior</label>
+            <label>@Recursos.Recurso.Analisis_linferior</label>
             <br />
             @foreach (double linf in ViewBag.linf)
             {
@@ -20,7 +20,7 @@
         </div>
 
         <div class="col-md-2 table-bordered">
-            <label>Limite superior</label>
+            <label>@Recursos.Recurso.Analisis_lsuperior</label>
             <br />
             @foreach (double lsup in ViewBag.lsup)
             {
@@ -31,7 +31,7 @@
         </div>
 
         <div class="col-md-2 table-bordered">
-            <label>Marca de clase</label>
+            <label>@Recursos.Recurso.Analisis_mclase</label>
             <br />
             @foreach (double marcaclase in ViewBag.marca_clase)
             {
@@ -42,7 +42,7 @@
 
 
         <div class="col-md-2 table-bordered">
-            <label>Frecuencia absoluta</label>
+            <label>@Recursos.Recurso.Analisis_fabsoluta</label>
             <br />
             @foreach (double fabsol in ViewBag.fabsoluta)
             {
@@ -81,13 +81,13 @@
         </div>
 
         <div class="col-md-2 table-bordered">
-            <label>Media</label>
+            <label>@Recursos.Recurso.Analisis_media</label>
             <br />
             <label>@ViewBag.media</label>
         </div>
 
         <div class="col-md-2 table-bordered">
-            <label>Mediana</label>
+            <label>@Recursos.Recurso.Analisis_mediana</label>
             <br />
             <label>@ViewBag.mediana</label>
         </div>
@@ -101,7 +101,7 @@
     <div class="col-md-12">
 
         <div class="col-md-2 table-bordered">
-            <label>Produccion flores</label>
+            <label>@Recursos.Recurso.Analisis_proflores</label>
             <br />
             @foreach (int proplantas in ViewBag.producplantas)
             {
@@ -112,7 +112,7 @@
         </div>
 
         <div class="col-md-2 table-bordered">
-            <label>numero de camas</label>
+            <label>@Recursos.Recurso.Analisis_ncamas</label>
             <br />
             @foreach (int ncamas in ViewBag.ncamas)
             {
@@ -123,7 +123,7 @@
         </div>
 
         <div class="col-md-2 table-bordered">
-            <label>frecuencia acumulada</label>
+            <label>@Recursos.Recurso.Analisis_facumulada</label>
             <br />
             @foreach (double facumcamas in ViewBag.facumcamas)
             {
@@ -145,7 +145,7 @@
         </div>
 
         <div class="col-md-2 table-bordered">
-            <label>Error absoluto</label>
+            <label>@Recursos.Recurso.Analisis_Eabsoluto</label>
             <br />
             @foreach (double cal_ea in ViewBag.cal_ea)
             {

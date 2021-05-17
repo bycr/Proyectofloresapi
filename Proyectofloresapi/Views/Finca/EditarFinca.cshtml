@@ -1,6 +1,6 @@
 ﻿@model Proyectofloresapi.Models.ViewModelsFinca.FincaViewModel
 @{
-    ViewBag.Title = "Editar Finca";
+    ViewBag.Title = Recursos.Recurso.Finca_edit;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -22,13 +22,13 @@
                     @Html.ValidationMessageFor(d => d.Nombrefinca)
 
                 </div>
-                @if (ViewBag.departamentosList != null)
-                {
-                    <div class="col-md-4">
-                        @Html.LabelFor(d => d.Iddepartamento)
-                        @Html.DropDownListFor(m => m.Iddepartamento, ViewBag.departamentosList as SelectList, Recursos.Recurso.Finca_desplegable_departamento, new { @class = "form-control" })
-                    </div>
-                }
+                @* @if (ViewBag.departamentosList != null)
+        { *@
+                <div class="col-md-4">
+                    @Html.LabelFor(d => d.Iddepartamento)
+                    @Html.DropDownListFor(m => m.Iddepartamento, ViewBag.departamentosList as SelectList, Recursos.Recurso.Finca_desplegable_departamento, new { @class = "form-control" })
+                </div>
+                @*  } *@
                 <div class="col-md-4">
                     @Html.LabelFor(d => d.Idmunicipio)
                     @Html.DropDownListFor(m => m.Idmunicipio, new SelectList(""), Recursos.Recurso.Finca_desplegable_municipio, new { @class = "form-control" })
@@ -54,7 +54,6 @@
                 $("#Idmunicipio").empty();
                 $.each(data, function (Finca, row) {
                     $("#Idmunicipio").append("<option value='" + row.idmunicipio + "'>" + row.nombre + "</option>")
-
                 });
             });
         })

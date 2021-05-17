@@ -282,4 +282,100 @@ referencia, por favor salga del sistema y no haga mal uso de esta aplicación we
   <data name="_Layout_Catalogo" xml:space="preserve">
     <value>Catálogo</value>
   </data>
+  <data name="Produccion_plantas" xml:space="preserve">
+    <value>Número de plantas</value>
+  </data>
+  <data name="Produccion_id" xml:space="preserve">
+    <value>Id producción</value>
+  </data>
+  <data name="Desplegable_invernadero" xml:space="preserve">
+    <value>Seleccione un invernadero</value>
+  </data>
+  <data name="Analisis_Eabsoluto" xml:space="preserve">
+    <value>Error absoluto</value>
+  </data>
+  <data name="Analisis_fabsoluta" xml:space="preserve">
+    <value>Frecuencia absoluta</value>
+  </data>
+  <data name="Analisis_facumulada" xml:space="preserve">
+    <value>Frecuencia acumulada</value>
+  </data>
+  <data name="Analisis_linferior" xml:space="preserve">
+    <value>Límite inferior</value>
+  </data>
+  <data name="Analisis_lsuperior" xml:space="preserve">
+    <value>Límite superior</value>
+  </data>
+  <data name="Analisis_mclase" xml:space="preserve">
+    <value>Marca de clase</value>
+  </data>
+  <data name="Analisis_media" xml:space="preserve">
+    <value>Media</value>
+  </data>
+  <data name="Analisis_mediana" xml:space="preserve">
+    <value>Mediana</value>
+  </data>
+  <data name="Analisis_ncamas" xml:space="preserve">
+    <value>Número de camas</value>
+  </data>
+  <data name="Analisis_proflores" xml:space="preserve">
+    <value>Producción flores</value>
+  </data>
+  <data name="Analisis_titulo" xml:space="preserve">
+    <value>Análisis de datos</value>
+  </data>
+  <data name="Bloque_edit" xml:space="preserve">
+    <value>Editar bloque registrado</value>
+  </data>
+  <data name="Bloque_fecha" xml:space="preserve">
+    <value>Fecha registrado</value>
+  </data>
+  <data name="Bloque_lista" xml:space="preserve">
+    <value>Producciones de bloques</value>
+  </data>
+  <data name="Bloque_llevamos_año" xml:space="preserve">
+    <value>Llevamos al año</value>
+  </data>
+  <data name="Bloque_ppto_año" xml:space="preserve">
+    <value>Presupuestado al año</value>
+  </data>
+  <data name="Bloque_registro" xml:space="preserve">
+    <value>Registrar producción bloque</value>
+  </data>
+  <data name="Fincas_registradas" xml:space="preserve">
+    <value>Fincas registradas</value>
+  </data>
+  <data name="Finca_edit" xml:space="preserve">
+    <value>Editar finca registrada</value>
+  </data>
+  <data name="Finca_rnueva" xml:space="preserve">
+    <value>Registrar nueva finca</value>
+  </data>
+  <data name="Invernadero_edit" xml:space="preserve">
+    <value>Editar Invernadero Registrado</value>
+  </data>
+  <data name="invernadero_ingreso" xml:space="preserve">
+    <value>Registrar nuevo invernadero</value>
+  </data>
+  <data name="invernadero_listregis" xml:space="preserve">
+    <value>Invernaderos registrados</value>
+  </data>
+  <data name="Produccion_editar" xml:space="preserve">
+    <value>Editar producción registrada</value>
+  </data>
+  <data name="Produccion_nueva" xml:space="preserve">
+    <value>Registrar producción</value>
+  </data>
+  <data name="produccion_registrada" xml:space="preserve">
+    <value>Registro de produccion</value>
+  </data>
+  <data name="Usuarios_newregis" xml:space="preserve">
+    <value>Registrar nuevo usuario</value>
+  </data>
+  <data name="Usuarios_regist" xml:space="preserve">
+    <value>Usuarios registrados</value>
+  </data>
+  <data name="Usuario_edit" xml:space="preserve">
+    <value>Editar usuario registrado</value>
+  </data>
 </root>

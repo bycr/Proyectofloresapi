@@ -29,21 +29,27 @@ namespace Proyectofloresapi.Controllers
         }
 
         // GET: Usuario
-        [AuthorizeUser(idOperacion: 14)]
+        //[AuthorizeUser(idOperacion: 14)]
         public ActionResult ListaUsuario()
         {
             List<ListUsuarioViewModel> lst;
             using (proyectofloresEntities db = new proyectofloresEntities())
             {
-                lst = (from d in db.usuario
+                lst = (from usu in db.usuario
+                       join fi in db.finca
+                       on usu.idfinca equals fi.idfinca
+                       join ro in db.rol
+                       on usu.idrol equals ro.idrol
                        select new ListUsuarioViewModel
                        {
-                           Cedula = d.cedula,
-                           Nombres = d.nombres,
-                           Apellidos = d.apellidos,
-                           Idrol = d.idrol,
-                           Idfinca = d.idfinca,
-                           Email = d.email
+                           Cedula = usu.cedula,
+                           Nombres = usu.nombres,
+                           Apellidos = usu.apellidos,
+                           Idrol = usu.idrol,
+                           Rolname = ro.nombre,
+                           Idfinca = usu.idfinca,
+                           Namefinca = fi.nombrefinca,
+                           Email = usu.email
                        }).ToList();
             }
 
@@ -52,7 +58,7 @@ namespace Proyectofloresapi.Controllers
 
         proyectofloresEntities db = new proyectofloresEntities();
 
-        [AuthorizeUser(idOperacion: 15)]
+        //[AuthorizeUser(idOperacion: 15)]
         public ActionResult NuevoUsuario()
         {
             List<rol> rolList = db.rol.ToList();
@@ -98,7 +104,7 @@ namespace Proyectofloresapi.Controllers
             }
         }
 
-        [AuthorizeUser(idOperacion: 16)]
+        //[AuthorizeUser(idOperacion: 16)]
         public ActionResult EditarUsuario(int Id)
         {
             List<rol> rolList = db.rol.ToList();
@@ -159,7 +165,7 @@ namespace Proyectofloresapi.Controllers
         }
 
         //Eliminar 
-        [AuthorizeUser(idOperacion: 17)]
+        //[AuthorizeUser(idOperacion: 17)]
         [HttpGet]
         public ActionResult EliminarUsuario(int Id)
         {

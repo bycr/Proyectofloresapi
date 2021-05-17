@@ -1,6 +1,6 @@
 ﻿@model List<Proyectofloresapi.Models.ViewModelBloque.ListBloqueViewModel>
 @{
-    ViewBag.Title = "ListaBloque";
+    ViewBag.Title = Recursos.Recurso.Bloque_lista;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -15,24 +15,22 @@
     <div class="col-md-12">
         <table class="table">
             <tr>
-                <th>ID</th>
-                <th># Bloque</th>
-                <th>ppto año</th>
-                <th>llevamos año</th>
-                <th>diferencia año</th>
-                <th>ppto mes</th>
-                <th>llevamos mes</th>
-                <th>diferencia mes</th>
-                <th>cedula</th>
-                <th>Invernadero</th>
-                <th>Finca</th>
-                <th>Fecha</th>
+                <th>@Recursos.Recurso.Bloque_numero</th>
+                <th>@Recursos.Recurso.Bloque_ppto_año</th>
+                <th>@Recursos.Recurso.Bloque_llevamos_año</th>
+                <th>@Recursos.Recurso.Bloque_diferenciaaño</th>
+                <th>@Recursos.Recurso.Bloque_presupuestadomes</th>
+                <th>@Recursos.Recurso.Bloque_llevamosmes</th>
+                <th>@Recursos.Recurso.Bloque_diferenciames</th>
+                <th>@Recursos.Recurso.Usuario_cedula</th>
+                <th>@Recursos.Recurso.Invernadero_numero</th>
+                <th>@Recursos.Recurso.Invernadero_finca</th> 
+                <th>@Recursos.Recurso.Bloque_fecha</th>
                 <th></th>
             </tr>
             @foreach (var oElemento in Model)
             {
                 <tr>
-                    <td>@oElemento.Idbloque</td>
                     <td>@oElemento.Numerobloque</td>
                     <td>@oElemento.Presupuestadoaño</td>
                     <td>@oElemento.Llevamosaño</td>
@@ -42,7 +40,7 @@
                     <td>@oElemento.Diferenciames</td>
                     <td>@oElemento.Cedula</td>
                     <td>@oElemento.Idinvernadero</td>
-                    <td>@oElemento.Idfinca</td>
+                    <td>@oElemento.NameFinca</td>
                     <td>@oElemento.Fechacreado</td>
                     <td>
                         <a class="btn btn-primary" href="~/Bloque/EditarBloque/@oElemento.Idbloque">@Recursos.Recurso.boton_editar</a>

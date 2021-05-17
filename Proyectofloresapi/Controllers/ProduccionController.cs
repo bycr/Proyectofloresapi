@@ -18,17 +18,20 @@ namespace Proyectofloresapi.Controllers
 
             using (proyectofloresEntities db = new proyectofloresEntities())
             {
-                lst = (from d in db.produccion
+                lst = (from pro in db.produccion
+                       join fi in db.finca
+                       on pro.idfinca equals fi.idfinca
                        select new ListProduccionViewModel
                        {
-                           Idproduccion = d.idproduccion,
-                           Idfinca = d.idfinca,
-                           Numerobloque = d.numerobloque,
-                           Variedadflor = d.variedadflor,
-                           Plantas = d.plantas,
-                           Areas = d.areas,
-                           Camas = d.camas,
-                           Nsemana = d.nsemana
+                           Idproduccion = pro.idproduccion,
+                           Idfinca = pro.idfinca,
+                           Namefinca = fi.nombrefinca,
+                           Numerobloque = pro.numerobloque,
+                           Variedadflor = pro.variedadflor,
+                           Plantas = pro.plantas,
+                           Areas = pro.areas,
+                           Camas = pro.camas,
+                           Nsemana = pro.nsemana
 
                        }).ToList();
             }

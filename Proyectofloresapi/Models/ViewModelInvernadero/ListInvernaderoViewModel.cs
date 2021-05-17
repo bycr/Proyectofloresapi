@@ -9,8 +9,9 @@ namespace Proyectofloresapi.Models.ViewModelInvernadero
         public int Idinvernadero { get; set; }
         public int Numeroinvernadero { get; set; }
         public int Idfinca { get; set; }
+        public string Namefinca { get; set; }
 
-        [NotMapped]
-        public List<ListFincaViewModel> ListFincaViewModelCollection { get; set; }
+
+
     }
 }
