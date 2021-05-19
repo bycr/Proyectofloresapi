@@ -217,15 +217,15 @@
     <Compile Include="Models\produccion.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\usuario.cs">
+      <DependentUpon>DB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ViewModelProduccion\ListProduccionViewModel.cs" />
     <Compile Include="Models\ViewModelProduccion\ProduccionViewModel.cs" />
     <Compile Include="Models\rol.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\rol_operacion.cs">
-      <DependentUpon>DB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\usuario.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ViewModelBloque\BloqueViewModel.cs" />

@@ -8,8 +8,7 @@
 
 @*NuevoUsuario nombre metodo *@
 @*Invernadero nombre del controlador *@
-@using (Html.BeginForm("NuevoUsuario", "Usuario", FormMethod.Post))
-{
+<form action="@Url.Content("~/Usuario/NuevoUsuario")" method="post">
     <div class="container">
         <div class="col-md-12">
             <div class="col-md-6">
@@ -18,9 +17,9 @@
                 @Html.ValidationMessageFor(d => d.Cedula, null, new { @class = "red" })
             </div>
             <div class="col-md-6">
-                <b>@Html.LabelFor(d => d.Password)</b>
-                @Html.TextBoxFor(d => d.Password, new { @class = "form-control" })
-                @Html.ValidationMessageFor(d => d.Password, null, new { @class = "red" })
+                <b>@Html.LabelFor(d => d.Email)</b>
+                @Html.TextBoxFor(d => d.Email, new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.Email, null, new { @class = "red" })
             </div>
         </div>
 
@@ -39,24 +38,20 @@
 
         <div class="col-md-12">
             <div class="col-md-6">
-                <b>@Html.LabelFor(d => d.Idrol)</b>
-                @Html.DropDownListFor(d => d.Idrol, ViewBag.rolList as SelectList, Recursos.Recurso.Seleccionable_rol, new { @class = "form-control" })
-            </div>
+                    <b>@Html.LabelFor(d => d.Idrol)</b>
+                    @Html.DropDownListFor(d => d.Idrol, ViewBag.rolList as SelectList, Recursos.Recurso.Seleccionable_rol, new { @class = "form-control" })
+                </div>
             <div class="col-md-6">
-                <b>@Html.LabelFor(d => d.Idfinca)</b>
-                @Html.DropDownListFor(d => d.Idfinca, ViewBag.fincaList as SelectList, Recursos.Recurso.Invernadero_seleccionable, new { @class = "form-control" })
+                
             </div>
         </div>
 
-        <div class="col-md-10">
-            <b>@Html.LabelFor(d => d.Email)</b>
-            @Html.TextBoxFor(d => d.Email, new { @class = "form-control" })
-            @Html.ValidationMessageFor(d => d.Email, null, new { @class = "red" })
-        </div>
         <br />
     </div>
 
     <div style="text-align:right">
         <input value="@Recursos.Recurso.boton_guardar" class="btn btn-primary" type="submit" />
     </div>
-}
+</form>
+
+    

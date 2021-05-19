@@ -11,7 +11,7 @@
 @using (Html.BeginForm("EditarUsuario", "Usuario", FormMethod.Post))
 {
 
-    @Html.HiddenFor(d => d.Cedula)
+    @Html.HiddenFor(d => d.Idusuario)
 
     <div class="container">
         <div class="col-md-12">
@@ -21,9 +21,9 @@
                 @Html.ValidationMessageFor(d => d.Cedula, null, new { @class = "red" })
             </div>
             <div class="col-md-6">
-                <b>@Html.LabelFor(d => d.Password)</b>
-                @Html.TextBoxFor(d => d.Password, new { @class = "form-control" })
-                @Html.ValidationMessageFor(d => d.Password, null, new { @class = "red" })
+                <b>@Html.LabelFor(d => d.Email)</b>
+                @Html.TextBoxFor(d => d.Email, new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.Email, null, new { @class = "red" })
             </div>
         </div>
 
@@ -46,17 +46,11 @@
                 @Html.DropDownListFor(d => d.Idrol, ViewBag.rolList as SelectList, Recursos.Recurso.Seleccionable_rol, new { @class = "form-control" })
             </div>
             <div class="col-md-6">
-                <b>@Html.LabelFor(d => d.Idfinca)</b>
-                @Html.DropDownListFor(d => d.Idfinca, ViewBag.fincaList as SelectList, Recursos.Recurso.Invernadero_seleccionable, new { @class = "form-control" })
+               
+                <br />
             </div>
         </div>
 
-        <div class="col-md-10">
-            <b>@Html.LabelFor(d => d.Email)</b>
-            @Html.TextBoxFor(d => d.Email, new { @class = "form-control" })
-            @Html.ValidationMessageFor(d => d.Email, null, new { @class = "red" })
-        </div>
-        <br />
     </div>
 
     <div style="text-align:right">
