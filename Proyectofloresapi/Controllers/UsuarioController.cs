@@ -136,11 +136,10 @@ namespace Proyectofloresapi.Controllers
 
                         oUsuario.idusuario = model.Idusuario;
                         oUsuario.cedula = model.Cedula;
-                        oUsuario.password = model.Password;
+                        //oUsuario.password = model.Password;
                         oUsuario.nombres = model.Nombres;
                         oUsuario.apellidos = model.Apellidos;
                         oUsuario.idrol = model.Idrol;
-
                         oUsuario.email = model.Email;
 
                         db.Entry(oUsuario).State = System.Data.Entity.EntityState.Modified;
