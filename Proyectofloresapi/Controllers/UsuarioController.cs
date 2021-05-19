@@ -159,5 +159,19 @@ namespace Proyectofloresapi.Controllers
             }
         }
 
+        //Eliminar 
+        //[AuthorizeUser(idOperacion: 17)]
+        [HttpGet]
+        public ActionResult EliminarUsuario(int Id)
+        {
+            using (proyectofloresEntities db = new proyectofloresEntities())
+            {
+                var oUsuario = db.usuario.Find(Id);
+                db.usuario.Remove(oUsuario);
+                db.SaveChanges();
+            }
+            return Redirect("~/Usuario/ListaUsuario");
+        }
+
     }
 }
