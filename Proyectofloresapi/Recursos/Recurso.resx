@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Home_parrafo" xml:space="preserve">
-    <value>Este sistema de inventario esta desarrollado único y exclusivamente para los
+    <value>Este sistema de información esta desarrollado único y exclusivamente para los
 propietarios y administradores de las empresas de flores, si usted por algún motivo
 logro acceder sin hacer parte de alguno de estos dos últimos a los cuales se hace
 referencia, por favor salga del sistema y no haga mal uso de esta aplicación web.</value>

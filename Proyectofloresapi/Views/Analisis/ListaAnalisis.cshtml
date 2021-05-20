@@ -3,159 +3,246 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@ViewBag.Title</h2>
+<h2 class="text-center"><b>@ViewBag.Title</b></h2>
 
-<div class="row table-bordered">
-    <div class="col-md-12">
+<style type="text/css">
+    .body {
+        background: url(../Img/graficar.jpg) no-repeat center top;
+        opacity: 50;
+    }
 
-        <div class="col-md-2 table-bordered">
-            <label>@Recursos.Recurso.Analisis_linferior</label>
-            <br />
-            @foreach (double linf in ViewBag.linf)
-            {
+    .dat {
+        background-color: #c4f1a5;
+    }
 
-                @linf
+    .medidten {
+        background-color: #D6C5C1;
+    }
+
+    .errabs {
+        background-color: #B3CBF1;
+    }
+    
+    .cont{
+        font-size: 10px;
+    }
+
+    .titt{
+        font-size: 10px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+</style>
+
+<body class="body">
+    <div class="dat row table-bordered">
+        <div class="col-md-12">
+            <div class="cont col-md-2">
+                <h2 class="titt">El Rango</h2>
+                <p>
+                    Es un valor numérico que indica la
+                    diferencia entre el valor máximo y el mínimo
+                    de una población o muestra estadística.
+                </p>
+            </div>
+
+            <div class="cont col-md-2">
+                <h2 class="titt">El límite superior</h2>
+                <p>
+                    Es el valor máximo de la muestra o población.
+                </p>
+            </div>
+
+            <div class="cont col-md-2">
+                <h2 class="titt">El límite inferior</h2>
+                <p>
+                    Es el valor mínimo de la muestra o población estadística.
+                </p>
+            </div>
+
+            <div class="cont col-md-2">
+                <h2 class="titt">La media</h2>
+                <p>
+                    Es una medida de tendencia central que resulta de efectuar una serie
+                    determinada de operaciones con un conjunto de números y que, en determinadas
+                    condiciones, puede representar por sí solo a todo el conjunto.
+                </p>
+            </div>
+
+            <div class="cont col-md-2">
+                <h2 class="titt">La mediana</h2>
+                <p>
+                    Representa el valor de la variable de
+                    posición central en un conjunto de
+                    datos ordenados. Se le denota mediana.
+                </p>
+            </div>
+
+            <div class="cont col-md-2">
+                <h2 class="titt">La moda</h2>
+                <p>
+                    Es el valor con mayor frecuencia en una de las distribuciones de datos
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="medidten row table-bordered">
+        <div class="col-md-12">
+
+            <div class="col-md-2 table-bordered">
+                <label>@Recursos.Recurso.Analisis_linferior</label>
                 <br />
-            }
+                @foreach (double linf in ViewBag.linf)
+                {
+
+                    @linf
+                    <br />
+                }
+            </div>
+
+            <div class="col-md-2 table-bordered">
+                <label>@Recursos.Recurso.Analisis_lsuperior</label>
+                <br />
+                @foreach (double lsup in ViewBag.lsup)
+                {
+
+                    @lsup
+                    <br />
+                }
+            </div>
+
+            <div class="col-md-2 table-bordered">
+                <label>@Recursos.Recurso.Analisis_mclase</label>
+                <br />
+                @foreach (double marcaclase in ViewBag.marca_clase)
+                {
+                    @marcaclase
+                    <br />
+                }
+            </div>
+
+
+            <div class="col-md-2 table-bordered">
+                <label>@Recursos.Recurso.Analisis_fabsoluta</label>
+                <br />
+                @foreach (double fabsol in ViewBag.fabsoluta)
+                {
+                    @fabsol
+                    <br />
+                }
+            </div>
+
+            <div class="col-md-2 table-bordered">
+                <label>Frecuencia relativa</label>
+                <br />
+                @foreach (double frela in ViewBag.frelativa)
+                {
+                    @frela
+                    <br />
+                }
+            </div>
+
+            <div class="col-md-2 table-bordered">
+                @*Marca de clase * Frecuencia absoluta*@
+                <label>Xi * Fi</label>
+                <br />
+                @foreach (double xf in ViewBag.xf)
+                {
+                    @xf
+                    <br />
+                }
+            </div>
+
         </div>
 
-        <div class="col-md-2 table-bordered">
-            <label>@Recursos.Recurso.Analisis_lsuperior</label>
-            <br />
-            @foreach (double lsup in ViewBag.lsup)
-            {
+        <div class="col-md-12">
 
-                @lsup
+            <div class="col-md-2">
+
+            </div>
+
+            <div class="col-md-2 table-bordered">
+                <label>@Recursos.Recurso.Analisis_media</label>
                 <br />
-            }
+                <label>@ViewBag.media</label>
+            </div>
+
+            <div class="col-md-2 table-bordered">
+                <label>@Recursos.Recurso.Analisis_mediana</label>
+                <br />
+                <label>@ViewBag.mediana</label>
+            </div>
+
         </div>
 
-        <div class="col-md-2 table-bordered">
-            <label>@Recursos.Recurso.Analisis_mclase</label>
-            <br />
-            @foreach (double marcaclase in ViewBag.marca_clase)
-            {
-                @marcaclase
-                <br />
-            }
-        </div>
+        <br />
+    </div>
 
 
-        <div class="col-md-2 table-bordered">
-            <label>@Recursos.Recurso.Analisis_fabsoluta</label>
-            <br />
-            @foreach (double fabsol in ViewBag.fabsoluta)
-            {
-                @fabsol
-                <br />
-            }
-        </div>
+    <div class="errabs row table-bordered">
+        <div class="col-md-12">
 
-        <div class="col-md-2 table-bordered">
-            <label>Frecuencia relativa</label>
-            <br />
-            @foreach (double frela in ViewBag.frelativa)
-            {
-                @frela
+            <div class="col-md-2 table-bordered">
+                <label>@Recursos.Recurso.Analisis_proflores</label>
                 <br />
-            }
-        </div>
+                @foreach (int proplantas in ViewBag.producplantas)
+                {
 
-        <div class="col-md-2 table-bordered">
-            @*Marca de clase * Frecuencia absoluta*@
-            <label>Xi * Fi</label>
-            <br />
-            @foreach (double xf in ViewBag.xf)
-            {
-                @xf
+                    @proplantas
+                    <br />
+                }
+            </div>
+
+            <div class="col-md-2 table-bordered">
+                <label>@Recursos.Recurso.Analisis_ncamas</label>
                 <br />
-            }
+                @foreach (int ncamas in ViewBag.ncamas)
+                {
+
+                    @ncamas
+                    <br />
+                }
+            </div>
+
+            <div class="col-md-3 table-bordered">
+                <label>@Recursos.Recurso.Analisis_facumulada</label>
+                <br />
+                @foreach (double facumcamas in ViewBag.facumcamas)
+                {
+
+                    @facumcamas
+                    <br />
+                }
+            </div>
+
+            <div class="col-md-2 table-bordered">
+                <label>frecuencia acumulada</label>
+                <br />
+                @foreach (double medifrecuen in ViewBag.medifrec)
+                {
+
+                    @medifrecuen
+                    <br />
+                }
+            </div>
+
+            <div class="col-md-2 table-bordered">
+                <label>@Recursos.Recurso.Analisis_Eabsoluto</label>
+                <br />
+                @foreach (double cal_ea in ViewBag.cal_ea)
+                {
+
+                    @cal_ea
+                    <br />
+                }
+            </div>
+
+
         </div>
 
     </div>
+</body>
 
-    <div class="col-md-12">
-
-        <div class="col-md-2">
-
-        </div>
-
-        <div class="col-md-2 table-bordered">
-            <label>@Recursos.Recurso.Analisis_media</label>
-            <br />
-            <label>@ViewBag.media</label>
-        </div>
-
-        <div class="col-md-2 table-bordered">
-            <label>@Recursos.Recurso.Analisis_mediana</label>
-            <br />
-            <label>@ViewBag.mediana</label>
-        </div>
-        
-    </div>
-
-    <br /> 
-</div>
-
-<div class="row table-bordered">
-    <div class="col-md-12">
-
-        <div class="col-md-2 table-bordered">
-            <label>@Recursos.Recurso.Analisis_proflores</label>
-            <br />
-            @foreach (int proplantas in ViewBag.producplantas)
-            {
-
-                @proplantas
-                <br />
-            }
-        </div>
-
-        <div class="col-md-2 table-bordered">
-            <label>@Recursos.Recurso.Analisis_ncamas</label>
-            <br />
-            @foreach (int ncamas in ViewBag.ncamas)
-            {
-
-                @ncamas
-                <br />
-            }
-        </div>
-
-        <div class="col-md-2 table-bordered">
-            <label>@Recursos.Recurso.Analisis_facumulada</label>
-            <br />
-            @foreach (double facumcamas in ViewBag.facumcamas)
-            {
-
-                @facumcamas
-                <br />
-            }
-        </div>
-
-        <div class="col-md-2 table-bordered">
-            <label>frecuencia acumulada</label>
-            <br />
-            @foreach (double medifrecuen in ViewBag.medifrec)
-            {
-
-                @medifrecuen
-                <br />
-            }
-        </div>
-
-        <div class="col-md-2 table-bordered">
-            <label>@Recursos.Recurso.Analisis_Eabsoluto</label>
-            <br />
-            @foreach (double cal_ea in ViewBag.cal_ea)
-            {
-
-                @cal_ea
-                <br />
-            }
-        </div>
-
-
-    </div>
-
-</div>

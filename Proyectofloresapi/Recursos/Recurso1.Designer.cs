@@ -19,7 +19,7 @@ namespace Recursos {
     // a través de una herramienta como ResGen o Visual Studio.
     // Para agregar o quitar un miembro, edite el archivo .ResX y, a continuación, vuelva a ejecutar ResGen
     // con la opción /str o recompile su proyecto de VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Recurso {
@@ -520,7 +520,7 @@ namespace Recursos {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Este sistema de inventario esta desarrollado único y exclusivamente para los
+        ///   Busca una cadena traducida similar a Este sistema de información esta desarrollado único y exclusivamente para los
         ///propietarios y administradores de las empresas de flores, si usted por algún motivo
         ///logro acceder sin hacer parte de alguno de estos dos últimos a los cuales se hace
         ///referencia, por favor salga del sistema y no haga mal uso de esta aplicación web..

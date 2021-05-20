@@ -1,0 +1,24 @@
+﻿@model Proyectofloresapi.Models.RecoveryViewModel
+@{
+    ViewBag.Title = "StartRecovery";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+
+}
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <div class="form-style">
+            <form action="@Url.Content("~/Access/StartRecovery")" method="post">
+                <label>Escribe tu correo electronico</label>
+                @Html.TextBoxFor(d => d.Email , null, new {@class="form-control"})
+                @Html.ValidationMessageFor(d => d.Email,null ,new {style = "color:red;"})
+                <br />
+
+                <div class="text-right">
+                    <button class="btn btn-primary">Recuperar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+ 
