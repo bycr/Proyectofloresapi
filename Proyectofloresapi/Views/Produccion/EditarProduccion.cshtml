@@ -6,6 +6,18 @@
 
 <h2>@ViewBag.Title</h2>
 
+<script>
+    function ValidateNumber(e) {
+        var evt = (e) ? e : window.event;
+        var charCode = (evt.keyCode) ? evt.keyCode : evt.which;
+        if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+            return false;
+        }
+        return true;
+    };
+
+</script>
+
 @using (Html.BeginForm("EditarProduccion", "Produccion", FormMethod.Post))
 {
     @Html.HiddenFor(d => d.Idproduccion)
@@ -39,7 +51,7 @@
                     </div>
                     <div class="col-md-6">
                         <b>@Html.LabelFor(d => d.Areas)</b>
-                        @Html.TextBoxFor(d => d.Areas, new { onkeydown = "return ValidateNumber(event);", @class = "form-control" })
+                        @Html.TextBoxFor(d => d.Areas, new {  @class = "form-control" })
                         @Html.ValidationMessageFor(d => d.Areas, null, new { @class = "red" })
                     </div>
                 </div>
@@ -71,9 +83,14 @@
         <div class="form-group">
             <div class="row">
                 <div class="col-md-12">
-                    <b>@Html.LabelFor(d => d.Variedadflor)</b>
-                    @Html.TextBoxFor(d => d.Variedadflor, new { onkeydown = "return ValidateNumber(event);", @class = "form-control" })
-                    @Html.ValidationMessageFor(d => d.Variedadflor, null, new { @class = "red" })
+                    <div class="col-md-6">
+                        <b>@Html.LabelFor(d => d.Variedadflor)</b>
+                        @Html.TextBoxFor(d => d.Variedadflor, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(d => d.Variedadflor, null, new { @class = "red" })
+                    </div>
+                    <div class="col-md-6">
+
+                    </div>                   
                 </div>
             </div>
         </div>

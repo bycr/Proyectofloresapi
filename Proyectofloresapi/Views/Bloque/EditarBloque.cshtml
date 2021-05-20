@@ -20,11 +20,11 @@
                 <div class="row text-center">
                     <div class="col-md-4">
                         <b>@Html.LabelFor(d => d.Presupuestadoaño)</b>
-                        @Html.TextBoxFor(d => d.Presupuestadoaño, "", new { @class = "form-control" })
+                        @Html.TextBoxFor(d => d.Presupuestadoaño,  new { onkeydown = "return ValidateNumber(event);", @class = "form-control" })
                     </div>
                     <div class="col-md-4">
                         <b>@Html.LabelFor(d => d.Llevamosaño)</b>
-                        @Html.TextBoxFor(d => d.Llevamosaño, "", new { @class = "form-control" })
+                        @Html.TextBoxFor(d => d.Llevamosaño, new { onkeydown = "return ValidateNumber(event);", @class = "form-control" })
                     </div>
                 </div>
             </div>
@@ -42,11 +42,11 @@
                 <div class="row text-center">
                     <div class="col-md-4">
                         <b>@Html.LabelFor(d => d.Presupuestadomes)</b>
-                        @Html.TextBoxFor(d => d.Presupuestadomes, "", new { @class = "form-control" })
+                        @Html.TextBoxFor(d => d.Presupuestadomes, new { onkeydown = "return ValidateNumber(event);", @class = "form-control" })
                     </div>
                     <div class="col-md-4">
                         <b>@Html.LabelFor(d => d.Llevamosmes)</b>
-                        @Html.TextBoxFor(d => d.Llevamosmes, "", new { @class = "form-control" })
+                        @Html.TextBoxFor(d => d.Llevamosmes, new { onkeydown = "return ValidateNumber(event);", @class = "form-control" })
                     </div>
                 </div>
             </div>
@@ -64,11 +64,11 @@
                 <div class="row text-center">
                     <div class="col-md-4">
                         <b>@Html.LabelFor(d => d.Numerobloque)</b>
-                        @Html.TextBoxFor(d => d.Numerobloque, "", new { @class = "form-control" })
+                        @Html.TextBoxFor(d => d.Numerobloque, new { onkeydown = "return ValidateNumber(event);", @class = "form-control" })
                     </div>
                     <div class="col-md-4">
                         <b>@Html.LabelFor(d => d.Cedula)</b>
-                        @Html.TextBoxFor(d => d.Cedula, "", new { @class = "form-control" })
+                        @Html.TextBoxFor(d => d.Cedula,  new { onkeydown = "return ValidateNumber(event);", @class = "form-control" })
                     </div>
                 </div>
             </div>
@@ -117,4 +117,14 @@
             });
         })
     });
+
+    function ValidateNumber(e) {
+        var evt = (e) ? e : window.event;
+        var charCode = (evt.keyCode) ? evt.keyCode : evt.which;
+        if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+            return false;
+        }
+        return true;
+    };
+
 </script>

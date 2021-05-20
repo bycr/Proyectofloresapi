@@ -12,6 +12,7 @@ namespace Proyectofloresapi.Controllers
 {
     public class AccessController : Controller
     {
+        //cambia la url del dominio 
         string urlDomain = "http://localhost:61867/";
         // GET: Access
         public ActionResult Index()
@@ -112,7 +113,7 @@ namespace Proyectofloresapi.Controllers
             }
 
             ViewBag.Message = "Contraseña modificada con éxito";
-            return View("~/Acceso/Login");
+            return RedirectToAction("Login", "Acceso");
         }
 
         #region HELPERS

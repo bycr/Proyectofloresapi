@@ -8,6 +8,7 @@ namespace Proyectofloresapi.Models
 {
     public class RecoveryViewModel
     {
+        [DataType(DataType.EmailAddress)]
         [EmailAddress]
         [Required]
         public string Email { get; set; }

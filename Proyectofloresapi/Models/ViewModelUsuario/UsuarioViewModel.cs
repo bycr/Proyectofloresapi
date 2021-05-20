@@ -16,10 +16,12 @@ namespace Proyectofloresapi.Models.ViewModelUsuario
         public string Password { get; set; }
 
         [Required]
+        [DataType(DataType.Text)]
         [Display(ResourceType = typeof(Recurso), Name = "Usuario_nombres")]
         public string Nombres { get; set; }
 
         [Required]
+        [DataType(DataType.Text)]
         [Display(ResourceType = typeof(Recurso), Name = "Usuario_apellidos")]
         public string Apellidos { get; set; }
 
@@ -28,8 +30,11 @@ namespace Proyectofloresapi.Models.ViewModelUsuario
 
         [Required]
         [DataType(DataType.EmailAddress)]
+        [EmailAddress]
         [Display(ResourceType = typeof(Recurso), Name = "Usuario_correo")]
         public string Email { get; set; }
+
+        [StringLength(50)]
         public string Token { get; set; }
 
     }
