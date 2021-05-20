@@ -13,7 +13,7 @@ namespace Proyectofloresapi.Controllers
     public class AccessController : Controller
     {
         //cambia la url del dominio 
-        string urlDomain = "http://localhost:61867/";
+        string urlDomain = "http://proyectoflores.azurewebsites.net/";
         // GET: Access
         public ActionResult Index()
         {
