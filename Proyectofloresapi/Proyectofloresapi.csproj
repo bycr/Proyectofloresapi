@@ -257,6 +257,7 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Img\01.jpg" />
     <Content Include="Img\1.jpg" />
     <Content Include="Img\Flor bola verde 3.jpg" />
     <Content Include="Img\Flor Cuarteto azul 13.jpg" />
