@@ -112,7 +112,7 @@ namespace Proyectofloresapi.Controllers
             }
 
             ViewBag.Message = "Contraseña modificada con éxito";
-            return View("Index");
+            return View("~/Acceso/Login");
         }
 
         #region HELPERS
