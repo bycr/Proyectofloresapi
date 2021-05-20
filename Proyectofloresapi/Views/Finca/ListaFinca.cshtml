@@ -1,11 +1,7 @@
 ﻿@model List<Proyectofloresapi.Models.ViewModelsFinca.ListFincaViewModel>
 @{
-                /**/
-
-                /**/
-
-                ViewBag.Title = "Lista de Fincas";
-                Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = Recursos.Recurso.Fincas_registradas;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>@ViewBag.Title</h2>
@@ -18,26 +14,24 @@
     <div class="col-md-12">
         <table class="table">
             <tr>
-                <th>@Recursos.Recurso.Finca_Lista_Id</th>
                 <th>@Recursos.Recurso.Finca_Lista_nombre</th>
                 <th>@Recursos.Recurso.Finca_Lista_region</th>
                 <th>@Recursos.Recurso.Finca_Lista_ciudad</th>
                 <th></th>
             </tr>
             @foreach (var oElemento in Model)
-             {
+            {
                 <tr>
-                    <td>@oElemento.Idfinca</td>
                     <td>@oElemento.Nombrefinca</td>
-                    <td>@oElemento.Iddepartamento_</td>
-                    <td>@oElemento.Idmunicipio</td>
+                    <td>@oElemento.Namedepartamento</td>
+                    <td>@oElemento.Namemunicipio</td>
                     <td>
                         <a class="btn btn-primary" href="~/finca/EditarFinca/@oElemento.Idfinca">@Recursos.Recurso.boton_editar</a>
                         <a class="btn btn-danger" href="~/finca/EliminarFinca/@oElemento.Idfinca">@Recursos.Recurso.boton_eliminar</a>
                     </td>
                 </tr>
 
-             }
+            }
         </table>
     </div>
 </div>

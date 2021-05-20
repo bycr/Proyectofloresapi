@@ -26,24 +26,28 @@ namespace Proyectofloresapi.Controllers
         {
             return "model";
         }
+        proyectofloresEntities db = new proyectofloresEntities();
 
         //[AuthorizeUser(idOperacion:1)]
         public ActionResult ListaFinca()
         {
             List<ListFincaViewModel>  lst;
 
-            using (proyectofloresEntities db = new proyectofloresEntities() )
-            {
-                lst = (from d in db.finca
-                       select new ListFincaViewModel
-                       {
-                           Idfinca = d.idfinca,
-                           Nombrefinca = d.nombrefinca,
-                           Iddepartamento_ = d.iddepartamento_,
-                           Idmunicipio = d.idmunicipio
+            lst = (from fi in db.finca
+                             join de in db.departamentos
+                             on fi.iddepartamento_ equals de.iddepartamento
+                             join mu in db.municipios
+                             on fi.idmunicipio equals mu.idmunicipio
+                             select new ListFincaViewModel
+                             {
+                                 Idfinca = fi.idfinca,
+                                 Nombrefinca = fi.nombrefinca,
+                                 Iddepartamento_ = fi.iddepartamento_,
+                                 Namedepartamento = de.nombre,
+                                 Idmunicipio = fi.idmunicipio,
+                                 Namemunicipio = mu.nombre
 
-                       }).ToList();
-            }
+                             }).ToList();
 
             return View(lst);
         }

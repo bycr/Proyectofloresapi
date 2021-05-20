@@ -28,19 +28,22 @@ namespace Proyectofloresapi.Controllers
         }
 
         // GET: Invernadero
-        [AuthorizeUser(idOperacion:7)]
+        //[AuthorizeUser(idOperacion:7)]
         public ActionResult ListaInvernadero()
         {
             List<ListInvernaderoViewModel> lst;
 
             using(proyectofloresEntities db = new proyectofloresEntities())
             {
-                lst = (from d in db.invernadero
+                lst = (from inv in db.invernadero
+                       join fi in db.finca
+                       on inv.idfinca equals fi.idfinca
                        select new ListInvernaderoViewModel
                        {
-                           Idinvernadero = d.idinvernadero,
-                           Numeroinvernadero = d.numeroinvernadero,
-                           Idfinca = d.idfinca
+                           Idinvernadero = inv.idinvernadero,
+                           Numeroinvernadero = inv.numeroinvernadero,
+                           Namefinca = fi.nombrefinca,
+                           Idfinca = inv.idfinca
 
                        }).ToList();
             }
@@ -50,7 +53,7 @@ namespace Proyectofloresapi.Controllers
 
         proyectofloresEntities sd = new proyectofloresEntities();
 
-        [AuthorizeUser(idOperacion: 8)]
+        //[AuthorizeUser(idOperacion: 8)]
         public ActionResult NuevoInvernadero()
         {
             List<finca> fincaList = sd.finca.ToList();
@@ -89,7 +92,7 @@ namespace Proyectofloresapi.Controllers
         }
 
         //editar invernaderos
-        [AuthorizeUser(idOperacion: 9)]
+        //[AuthorizeUser(idOperacion: 9)]
         public ActionResult EditarInvernadero(int Id)
         {
             List<finca> fincaList = sd.finca.ToList();

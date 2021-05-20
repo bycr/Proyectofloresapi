@@ -27,7 +27,6 @@ namespace Proyectofloresapi.Models
         public int idfinca { get; set; }
         public byte[] fechacreado { get; set; }
     
-        public virtual usuario usuario { get; set; }
         public virtual finca finca { get; set; }
         public virtual invernadero invernadero { get; set; }
     }

@@ -14,24 +14,15 @@ namespace Proyectofloresapi.Models
     
     public partial class usuario
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public usuario()
-        {
-            this.bloque = new HashSet<bloque>();
-        }
-    
         public int cedula { get; set; }
         public string password { get; set; }
         public string nombres { get; set; }
         public string apellidos { get; set; }
         public int idrol { get; set; }
-        public int idfinca { get; set; }
         public string email { get; set; }
         public string token { get; set; }
+        public int idusuario { get; set; }
     
-        public virtual finca finca { get; set; }
         public virtual rol rol { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<bloque> bloque { get; set; }
     }
 }

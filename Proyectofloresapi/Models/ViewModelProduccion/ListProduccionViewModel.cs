@@ -4,6 +4,7 @@
     {
         public int Idproduccion { get; set; }
         public int Idfinca { get; set; }
+        public string Namefinca { get; set; }
         public int Numerobloque { get; set; }
         public string Variedadflor { get; set; }
         public int Plantas { get; set; }

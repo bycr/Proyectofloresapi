@@ -29,37 +29,37 @@ namespace Proyectofloresapi.Controllers
         }
 
         // GET: Usuario
-        [AuthorizeUser(idOperacion: 14)]
+        //[AuthorizeUser(idOperacion: 14)]
         public ActionResult ListaUsuario()
         {
             List<ListUsuarioViewModel> lst;
             using (proyectofloresEntities db = new proyectofloresEntities())
             {
-                lst = (from d in db.usuario
+                lst = (from usu in db.usuario
+                       join ro in db.rol
+                       on usu.idrol equals ro.idrol
                        select new ListUsuarioViewModel
                        {
-                           Cedula = d.cedula,
-                           Nombres = d.nombres,
-                           Apellidos = d.apellidos,
-                           Idrol = d.idrol,
-                           Idfinca = d.idfinca,
-                           Email = d.email
+                           Idusuario = usu.idusuario,
+                           Cedula = usu.cedula,
+                           Nombres = usu.nombres,
+                           Apellidos = usu.apellidos,
+                           Idrol = usu.idrol,
+                           Rolname = ro.nombre,
+                           Email = usu.email
                        }).ToList();
             }
 
             return View(lst);
         }
 
-        proyectofloresEntities db = new proyectofloresEntities();
+        proyectofloresEntities sd = new proyectofloresEntities();
 
-        [AuthorizeUser(idOperacion: 15)]
+        //[AuthorizeUser(idOperacion: 15)]
         public ActionResult NuevoUsuario()
         {
-            List<rol> rolList = db.rol.ToList();
-            ViewBag.rolList = new SelectList(rolList, "idrol", "nombre");
-
-            List<finca> fincaList = db.finca.ToList();
-            ViewBag.fincaList = new SelectList(fincaList, "idfinca", "nombrefinca");
+            List<rol> RolList = sd.rol.ToList();
+            ViewBag.rolList = new SelectList(RolList, "idrol", "nombre");
 
             return View();
         }
@@ -73,14 +73,14 @@ namespace Proyectofloresapi.Controllers
                 {
                     using(proyectofloresEntities db = new proyectofloresEntities())
                     {
+                        string contra = Guid.NewGuid().ToString();
                         var oUsuario = new usuario();
 
                         oUsuario.cedula = model.Cedula;
-                        oUsuario.password = model.Password;
+                        oUsuario.password = contra;
                         oUsuario.nombres = model.Nombres;
                         oUsuario.apellidos = model.Apellidos;
                         oUsuario.idrol = model.Idrol;
-                        oUsuario.idfinca = model.Idfinca;
                         oUsuario.email = model.Email;
 
                         db.usuario.Add(oUsuario);
@@ -98,25 +98,25 @@ namespace Proyectofloresapi.Controllers
             }
         }
 
-        [AuthorizeUser(idOperacion: 16)]
+
+        //[AuthorizeUser(idOperacion: 16)]
         public ActionResult EditarUsuario(int Id)
         {
-            List<rol> rolList = db.rol.ToList();
+            List<rol> rolList = sd.rol.ToList();
             ViewBag.rolList = new SelectList(rolList, "idrol", "nombre");
 
-            List<finca> fincaList = db.finca.ToList();
-            ViewBag.fincaList = new SelectList(fincaList, "idfinca", "nombrefinca");
-
             UsuarioViewModel mod = new UsuarioViewModel();
+
             using (proyectofloresEntities db = new proyectofloresEntities())
             {
                 var oUsuario = db.usuario.Find(Id);
+
+                mod.Idusuario = oUsuario.idusuario;
                 mod.Cedula = oUsuario.cedula;
                 mod.Password = oUsuario.password;
                 mod.Nombres = oUsuario.nombres;
                 mod.Apellidos = oUsuario.apellidos;
                 mod.Idrol = oUsuario.idrol;
-                mod.Idfinca = oUsuario.idfinca;
                 mod.Email = oUsuario.email;
             }
 
@@ -132,14 +132,14 @@ namespace Proyectofloresapi.Controllers
                 {
                     using (proyectofloresEntities db = new proyectofloresEntities())
                     {
-                        var oUsuario = db.usuario.Find(model.Cedula);
+                        var oUsuario = db.usuario.Find(model.Idusuario);
 
+                        oUsuario.idusuario = model.Idusuario;
                         oUsuario.cedula = model.Cedula;
-                        oUsuario.password = model.Password;
+                        //oUsuario.password = model.Password;
                         oUsuario.nombres = model.Nombres;
                         oUsuario.apellidos = model.Apellidos;
                         oUsuario.idrol = model.Idrol;
-                        oUsuario.idfinca = model.Idfinca;
                         oUsuario.email = model.Email;
 
                         db.Entry(oUsuario).State = System.Data.Entity.EntityState.Modified;
@@ -159,7 +159,7 @@ namespace Proyectofloresapi.Controllers
         }
 
         //Eliminar 
-        [AuthorizeUser(idOperacion: 17)]
+        //[AuthorizeUser(idOperacion: 17)]
         [HttpGet]
         public ActionResult EliminarUsuario(int Id)
         {

@@ -1,6 +1,6 @@
 ﻿@model List<Proyectofloresapi.Models.ViewModelUsuario.ListUsuarioViewModel>
 @{
-    ViewBag.Title = "Lista de Usuarios";
+    ViewBag.Title = Recursos.Recurso.Usuarios_regist;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -18,7 +18,6 @@
                 <th>@Recursos.Recurso.Usuario_nombres</th>
                 <th>@Recursos.Recurso.Usuario_apellidos</th>
                 <th>@Recursos.Recurso.Usuario_rol</th>
-                <th>@Recursos.Recurso.Finca_Lista_nombre</th>
                 <th>@Recursos.Recurso.Usuario_correo</th>
                 <th></th>
             </tr>
@@ -28,12 +27,11 @@
                     <td>@oElemento.Cedula</td>
                     <td>@oElemento.Nombres</td>
                     <td>@oElemento.Apellidos</td>
-                    <td>@oElemento.Idrol</td>
-                    <td>@oElemento.Idfinca</td>
+                    <td>@oElemento.Rolname</td>
                     <td>@oElemento.Email</td>
                     <td>
-                        <a class="btn btn-primary" href="~/Usuario/EditarUsuario/@oElemento.Cedula">@Recursos.Recurso.boton_editar</a>
-                        <a class="btn btn-danger" href="~/Usuario/EliminarUsuario/@oElemento.Cedula">@Recursos.Recurso.boton_eliminar</a>
+                        <a class="btn btn-primary" href="~/Usuario/EditarUsuario/@oElemento.Idusuario">@Recursos.Recurso.boton_editar</a>
+                        <a class="btn btn-danger" href="~/Usuario/EliminarUsuario/@oElemento.Idusuario">@Recursos.Recurso.boton_eliminar</a>
                     </td>
                 </tr>
 

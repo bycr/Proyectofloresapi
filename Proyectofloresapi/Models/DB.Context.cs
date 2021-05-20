@@ -33,8 +33,8 @@ namespace Proyectofloresapi.Models
         public virtual DbSet<operaciones> operaciones { get; set; }
         public virtual DbSet<rol> rol { get; set; }
         public virtual DbSet<rol_operacion> rol_operacion { get; set; }
-        public virtual DbSet<usuario> usuario { get; set; }
         public virtual DbSet<bloque> bloque { get; set; }
         public virtual DbSet<produccion> produccion { get; set; }
+        public virtual DbSet<usuario> usuario { get; set; }
     }
 }

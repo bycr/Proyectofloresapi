@@ -35,20 +35,23 @@ namespace Proyectofloresapi.Controllers
 
             using (proyectofloresEntities db = new proyectofloresEntities())
             {
-                lst = (from d in db.bloque
+                lst = (from blo in db.bloque
+                       join fi in db.finca
+                       on blo.idfinca equals fi.idfinca
                        select new ListBloqueViewModel
                        {
-                           Idbloque = d.idbloque,
-                           Numerobloque = d.numerobloque,
-                           Presupuestadoaño = d.presupuestadoaño,
-                           Llevamosaño = d.llevamosaño,
-                           Diferenciaaño = d.diferenciaaño,
-                           Presupuestadomes = d.presupuestadomes,
-                           Llevamosmes = d.llevamosmes,
-                           Diferenciames = d.diferenciames,
-                           Cedula = d.cedula,
-                           Idinvernadero = d.idinvernadero,
-                           Idfinca = d.idfinca
+                           Idbloque = blo.idbloque,
+                           Numerobloque = blo.numerobloque,
+                           Presupuestadoaño = blo.presupuestadoaño,
+                           Llevamosaño = blo.llevamosaño,
+                           Diferenciaaño = blo.diferenciaaño,
+                           Presupuestadomes = blo.presupuestadomes,
+                           Llevamosmes = blo.llevamosmes,
+                           Diferenciames = blo.diferenciames,
+                           Cedula = blo.cedula,
+                           Idinvernadero = blo.idinvernadero,
+                           Idfinca = blo.idfinca,
+                           NameFinca = fi.nombrefinca
 
                        }).ToList();
 
@@ -114,9 +117,12 @@ namespace Proyectofloresapi.Controllers
 
 
         //editar bloque
-        [AuthorizeUser(idOperacion: 20)]
+        //[AuthorizeUser(idOperacion: 20)]
         public ActionResult EditarBloque(int Id)
         {
+            List<finca> fincaList = sd.finca.ToList();
+            ViewBag.fincaList = new SelectList(fincaList, "idfinca", "nombrefinca");
+
             BloqueViewModel model = new BloqueViewModel();
             using (proyectofloresEntities db = new proyectofloresEntities())
             {

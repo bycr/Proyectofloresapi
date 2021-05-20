@@ -262,7 +262,7 @@
     <value>Number of weeks</value>
   </data>
   <data name="Variedad_flor" xml:space="preserve">
-    <value>flower variety</value>
+    <value>Flower variety</value>
   </data>
   <data name="Error_autorizacion" xml:space="preserve">
     <value>Without authorization</value>
@@ -278,5 +278,101 @@
   </data>
   <data name="_Layout_Catalogo" xml:space="preserve">
     <value>Catalogue</value>
+  </data>
+  <data name="Produccion_plantas" xml:space="preserve">
+    <value>Number of plants</value>
+  </data>
+  <data name="Produccion_id" xml:space="preserve">
+    <value>Id production</value>
+  </data>
+  <data name="Desplegable_invernadero" xml:space="preserve">
+    <value>Select a greenhouse</value>
+  </data>
+  <data name="Analisis_Eabsoluto" xml:space="preserve">
+    <value>Absolut mistake</value>
+  </data>
+  <data name="Analisis_fabsoluta" xml:space="preserve">
+    <value>Absolute frecuency</value>
+  </data>
+  <data name="Analisis_facumulada" xml:space="preserve">
+    <value>Cumulative frequency</value>
+  </data>
+  <data name="Analisis_linferior" xml:space="preserve">
+    <value>Lower limit</value>
+  </data>
+  <data name="Analisis_lsuperior" xml:space="preserve">
+    <value>Upper limit</value>
+  </data>
+  <data name="Analisis_mclase" xml:space="preserve">
+    <value>Class mark</value>
+  </data>
+  <data name="Analisis_media" xml:space="preserve">
+    <value>Half</value>
+  </data>
+  <data name="Analisis_mediana" xml:space="preserve">
+    <value>Median</value>
+  </data>
+  <data name="Analisis_ncamas" xml:space="preserve">
+    <value>Number of beds</value>
+  </data>
+  <data name="Analisis_proflores" xml:space="preserve">
+    <value>Flower production</value>
+  </data>
+  <data name="Analisis_titulo" xml:space="preserve">
+    <value>Analysis of data</value>
+  </data>
+  <data name="Bloque_edit" xml:space="preserve">
+    <value>Edit registered block</value>
+  </data>
+  <data name="Bloque_fecha" xml:space="preserve">
+    <value>Registered date</value>
+  </data>
+  <data name="Bloque_lista" xml:space="preserve">
+    <value>Blocks productions</value>
+  </data>
+  <data name="Bloque_llevamos_año" xml:space="preserve">
+    <value>We take the year</value>
+  </data>
+  <data name="Bloque_ppto_año" xml:space="preserve">
+    <value>Budgeted per year</value>
+  </data>
+  <data name="Bloque_registro" xml:space="preserve">
+    <value>Register block production</value>
+  </data>
+  <data name="Fincas_registradas" xml:space="preserve">
+    <value>Registered farms</value>
+  </data>
+  <data name="Finca_edit" xml:space="preserve">
+    <value>Edit registered farm</value>
+  </data>
+  <data name="Finca_rnueva" xml:space="preserve">
+    <value>Register new farm</value>
+  </data>
+  <data name="Invernadero_edit" xml:space="preserve">
+    <value>Edit Registered Greenhouse</value>
+  </data>
+  <data name="invernadero_ingreso" xml:space="preserve">
+    <value>Register new greenhouse</value>
+  </data>
+  <data name="invernadero_listregis" xml:space="preserve">
+    <value>Registered greenhouses</value>
+  </data>
+  <data name="Produccion_editar" xml:space="preserve">
+    <value>Edit registered production</value>
+  </data>
+  <data name="Produccion_nueva" xml:space="preserve">
+    <value>Register production</value>
+  </data>
+  <data name="produccion_registrada" xml:space="preserve">
+    <value>Production record</value>
+  </data>
+  <data name="Usuarios_newregis" xml:space="preserve">
+    <value>Register new user</value>
+  </data>
+  <data name="Usuarios_regist" xml:space="preserve">
+    <value>Registered users</value>
+  </data>
+  <data name="Usuario_edit" xml:space="preserve">
+    <value>Edit registered user</value>
   </data>
 </root>
