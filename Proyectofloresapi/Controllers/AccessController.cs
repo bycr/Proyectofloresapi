@@ -1,11 +1,9 @@
 ﻿using Proyectofloresapi.Models;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net.Mail;
 using System.Security.Cryptography;
 using System.Text;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Proyectofloresapi.Controllers
@@ -13,7 +11,7 @@ namespace Proyectofloresapi.Controllers
     public class AccessController : Controller
     {
         //cambia la url del dominio 
-        string urlDomain = "http://proyectoflores.azurewebsites.net/";
+        string urlDomain = "http://localhost:61867/";
         // GET: Access
         public ActionResult Index()
         {

@@ -1,4 +1,5 @@
-﻿using Proyectofloresapi.Models;
+﻿using Proyectofloresapi.Filters;
+using Proyectofloresapi.Models;
 using System;
 using System.Linq;
 using System.Web.Mvc;
@@ -8,6 +9,8 @@ namespace Proyectofloresapi.Controllers
     public class AnalisisController : Controller
     {
         // GET: Analisis
+
+        [AuthorizeUser(idOperacion: 26)]
         public ActionResult ListaAnalisis()
         {
             using (proyectofloresEntities db = new proyectofloresEntities())
@@ -238,10 +241,10 @@ namespace Proyectofloresapi.Controllers
                         a++;
                     }
 
-                    mediana = li + ((acumulado / 2) - Fi_i / dato) * amp;
+                    //mediana = li + ((acumulado / 2) - Fi_i / dato) * amp;
                 }
                 //imprimos la mediana
-                ViewBag.mediana = mediana;
+                //ViewBag.mediana = mediana;
 
 
 

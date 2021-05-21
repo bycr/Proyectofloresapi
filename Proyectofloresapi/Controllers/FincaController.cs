@@ -28,7 +28,7 @@ namespace Proyectofloresapi.Controllers
         }
         proyectofloresEntities db = new proyectofloresEntities();
 
-        //[AuthorizeUser(idOperacion:1)]
+        [AuthorizeUser(idOperacion:1)]
         public ActionResult ListaFinca()
         {
             List<ListFincaViewModel>  lst;
@@ -54,7 +54,7 @@ namespace Proyectofloresapi.Controllers
 
         proyectofloresEntities sd = new proyectofloresEntities();
         
-        //[AuthorizeUser(idOperacion:2)]
+        [AuthorizeUser(idOperacion:2)]
         public ActionResult NuevaFinca()
         {
             List<departamentos> departamentosList = sd.departamentos.ToList();
@@ -100,7 +100,7 @@ namespace Proyectofloresapi.Controllers
         }      
 
         //editar finca
-        //[AuthorizeUser(idOperacion:5)]
+        [AuthorizeUser(idOperacion:5)]
         public ActionResult EditarFinca(int Id)
         {
             List<departamentos> departamentosList = sd.departamentos.ToList();

@@ -29,7 +29,7 @@ namespace Proyectofloresapi.Controllers
         }
 
         // GET: Usuario
-        //[AuthorizeUser(idOperacion: 14)]
+        [AuthorizeUser(idOperacion: 14)]
         public ActionResult ListaUsuario()
         {
             List<ListUsuarioViewModel> lst;
@@ -55,7 +55,7 @@ namespace Proyectofloresapi.Controllers
 
         proyectofloresEntities sd = new proyectofloresEntities();
 
-        //[AuthorizeUser(idOperacion: 15)]
+        [AuthorizeUser(idOperacion: 15)]
         public ActionResult NuevoUsuario()
         {
             List<rol> RolList = sd.rol.ToList();
@@ -99,7 +99,7 @@ namespace Proyectofloresapi.Controllers
         }
 
 
-        //[AuthorizeUser(idOperacion: 16)]
+        [AuthorizeUser(idOperacion: 16)]
         public ActionResult EditarUsuario(int Id)
         {
             List<rol> rolList = sd.rol.ToList();
@@ -159,7 +159,7 @@ namespace Proyectofloresapi.Controllers
         }
 
         //Eliminar 
-        //[AuthorizeUser(idOperacion: 17)]
+        [AuthorizeUser(idOperacion: 17)]
         [HttpGet]
         public ActionResult EliminarUsuario(int Id)
         {

@@ -7,8 +7,7 @@ namespace Proyectofloresapi
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
-            //filters.Add(new Proyectoflores.Filters.VerificaSession());
-
+            filters.Add(new Filters.VerificaSession());
         }
     }
 }

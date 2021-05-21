@@ -28,7 +28,7 @@ namespace Proyectofloresapi.Controllers
         }
 
         // GET: Bloque
-        //[AuthorizeUser(idOperacion: 18)]
+        [AuthorizeUser(idOperacion: 18)]
         public ActionResult ListaBloque()
         {
             List<ListBloqueViewModel> lst;
@@ -63,7 +63,7 @@ namespace Proyectofloresapi.Controllers
         proyectofloresEntities sd = new proyectofloresEntities();
 
         //registro nuevos bloques
-        //[AuthorizeUser(idOperacion: 19)]
+        [AuthorizeUser(idOperacion: 19)]
         public ActionResult NuevoBloque()
         {
             List<finca> fincaList = sd.finca.ToList();
@@ -117,7 +117,7 @@ namespace Proyectofloresapi.Controllers
 
 
         //editar bloque
-        //[AuthorizeUser(idOperacion: 20)]
+        [AuthorizeUser(idOperacion: 20)]
         public ActionResult EditarBloque(int Id)
         {
             List<finca> fincaList = sd.finca.ToList();
